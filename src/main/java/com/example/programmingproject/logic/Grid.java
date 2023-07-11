@@ -1,4 +1,5 @@
-package com.example.programmingproject;
+package com.example.programmingproject.logic;
+//This suggests that the minimum number of clues to provide in a grid is 17.
 
 public class Grid {
     int[][] base = new int[][]{

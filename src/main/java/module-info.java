@@ -3,6 +3,6 @@ module com.example.programmingproject {
     requires javafx.fxml;
 
 
-    opens com.example.programmingproject to javafx.fxml;
-    exports com.example.programmingproject;
+    exports com.example.programmingproject.logic;
+    opens com.example.programmingproject.logic to javafx.fxml;
 }
