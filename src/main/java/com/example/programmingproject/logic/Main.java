@@ -1,4 +1,6 @@
-package com.example.programmingproject;
+package com.example.programmingproject.logic;
+
+import com.example.programmingproject.logic.Grid;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,5 +10,11 @@ public class Main {
         System.out.println("////////////////");
         System.out.println();
         grid.printHiddenSudoku();
+
+        System.out.println();
+
+        Sudoku s = new Sudoku(9, 0);
+        s.fillValues();
+        s.printSudoku();
     }
 }
