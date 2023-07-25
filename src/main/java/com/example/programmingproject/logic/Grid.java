@@ -14,7 +14,8 @@ public class Grid {
             {5, 9, 2, 3, 7, 1, 4, 8, 6}};
 
     public Grid() {
-        this.levelOfTheGame = MIN_LEVEL;
+
+        setLevelOfTheGame(MIN_LEVEL); //TODO change for later
     }
 
     private final int MIN_LEVEL = 20; // the amount of hidden numbers
@@ -28,7 +29,7 @@ public class Grid {
 
     public void setLevelOfTheGame(int levelOfTheGame) {
         //TODO change for later
-        this.levelOfTheGame = MIN_LEVEL;
+        this.levelOfTheGame = levelOfTheGame;
     }
 
     public int[][] getBase() {
