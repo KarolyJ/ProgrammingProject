@@ -1,7 +1,6 @@
 package com.example.programmingproject.test;
 
 import com.example.programmingproject.logic.Grid;
-import com.example.programmingproject.logic.Sudoku;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
