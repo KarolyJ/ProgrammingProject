@@ -57,7 +57,7 @@ public class Grid {
     {
         return (int) Math.floor((Math.random()* 81 +1));
     }
-    public void printHiddenSudoku(){
+    public void hideSudoku(){
         int count = getLevelOfTheGame();
         while (count != 0)
         {
@@ -77,7 +77,9 @@ public class Grid {
                 base[i][j] = 0;
             }
         }
-
+    }
+    public void printHiddenSudoku(){
+        this.hideSudoku();
         for (int[] ints : getBase()) {
             for (int anInt : ints) {
                 System.out.print(anInt + " ");
