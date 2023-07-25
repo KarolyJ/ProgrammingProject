@@ -10,7 +10,7 @@ public class Sudoku
     int K; // No. Of missing digits
 
     // Constructor
-    Sudoku(int N, int K)
+    public Sudoku(int N, int K)
     {
         this.N = N;
         this.K = K;
