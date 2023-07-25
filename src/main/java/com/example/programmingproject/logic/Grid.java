@@ -13,17 +13,26 @@ public class Grid {
             {6, 7, 1, 8, 4, 2, 9, 5, 3},
             {5, 9, 2, 3, 7, 1, 4, 8, 6}};
 
-    private int MIN_LEVEL = 20; // the amount of hidden numbers
-    private int MID_LEVEL = 30;
-    private int MAX_LEVEL = 40;
+    public Grid() {
+        this.levelOfTheGame = MIN_LEVEL;
+    }
+
+    private final int MIN_LEVEL = 20; // the amount of hidden numbers
+    private final int MID_LEVEL = 30;
+    private final int MAX_LEVEL = 40;
     private int levelOfTheGame; //the level of difficulty
+
+    public int getLevelOfTheGame() {
+        return levelOfTheGame;
+    }
+
+    public void setLevelOfTheGame(int levelOfTheGame) {
+        //TODO change for later
+        this.levelOfTheGame = MIN_LEVEL;
+    }
 
     public int[][] getBase() {
         return base;
-    }
-
-    public void setBase(int[][] base) {
-        this.base = base;
     }
 
     public void chooseTheDifficulty(){
@@ -48,7 +57,7 @@ public class Grid {
         return (int) Math.floor((Math.random()* 81 +1));
     }
     public void printHiddenSudoku(){
-        int count = 20; //TODO change it to the levelOfTheGame
+        int count = getLevelOfTheGame();
         while (count != 0)
         {
             int cellId = randomGenerator()-1;
