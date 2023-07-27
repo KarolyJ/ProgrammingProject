@@ -10,6 +10,9 @@ public class Main {
         System.out.println("////////////////");
         System.out.println();
         grid.printHiddenSudoku();
+        System.out.println("////////////////");
+        System.out.println(grid.checkTheAnswers());
+        System.out.println("////////////////");
 
         System.out.println();
 

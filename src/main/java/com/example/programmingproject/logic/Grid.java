@@ -2,7 +2,7 @@ package com.example.programmingproject.logic;
 //This suggests that the minimum number of clues to provide in a grid is 17.
 
 public class Grid {
-    int[][] base = new int[][]{
+    private final int[][] base = new int[][]{
             {2, 3, 9, 4, 1, 5, 7, 6, 8},
             {7, 8, 4, 2, 3, 6, 5, 1, 9},
             {1, 6, 5, 9, 8, 7, 2, 3, 4},
@@ -13,8 +13,12 @@ public class Grid {
             {6, 7, 1, 8, 4, 2, 9, 5, 3},
             {5, 9, 2, 3, 7, 1, 4, 8, 6}};
 
-    public Grid() {
+    //TODO merge it with the class Sudoku
 
+    private int[][] readySudoku;
+
+    public Grid() {
+        setReadySudoku();
         setLevelOfTheGame(MIN_LEVEL); //TODO change for later
     }
 
@@ -28,7 +32,6 @@ public class Grid {
     }
 
     public void setLevelOfTheGame(int levelOfTheGame) {
-        //TODO change for later
         this.levelOfTheGame = levelOfTheGame;
     }
 
@@ -36,12 +39,30 @@ public class Grid {
         return base;
     }
 
-    public void chooseTheDifficulty(){
-        //TODO when the player chose the difficulty should be set the levelOfTheGame
+    public int[][] getReadySudoku(){
+        this.hideSudoku();
+        return readySudoku;
     }
 
-    public void checkTheAnswers(){
+    public  void setReadySudoku(){
+        readySudoku = getBase();
+        this.hideSudoku();
+    }
+
+    public boolean checkTheAnswers(){
         //TODO create a button which check the answers
+        //TODO fix the logic bc it's always true
+        if (base.length != readySudoku.length || base[0].length != readySudoku[0].length)
+            return false;
+
+        for (int i = 0; i < base.length; i++) {
+            for (int j = 0; j < base[0].length; j++) {
+                if (base[i][j] != readySudoku[i][j])
+                    return false;
+            }
+        }
+
+        return true;
     }
 
     public void printSudoku(){
@@ -71,16 +92,15 @@ public class Grid {
                 j = j - 1;
 
             // System.out.println(i+" "+j);
-            if (base[i][j] != 0)
+            if (readySudoku[i][j] != 0)
             {
                 count--;
-                base[i][j] = 0;
+                readySudoku[i][j] = 0;
             }
         }
     }
     public void printHiddenSudoku(){
-        this.hideSudoku();
-        for (int[] ints : getBase()) {
+        for (int[] ints : getReadySudoku()) {
             for (int anInt : ints) {
                 System.out.print(anInt + " ");
             }
