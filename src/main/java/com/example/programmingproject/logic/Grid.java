@@ -18,7 +18,7 @@ public class Grid {
     private int[][] readySudoku;
 
     public Grid() {
-        setReadySudoku();
+        //setReadySudoku();
         setLevelOfTheGame(MIN_LEVEL); //TODO change for later
     }
 
@@ -40,7 +40,7 @@ public class Grid {
     }
 
     public int[][] getReadySudoku(){
-        this.hideSudoku();
+        setReadySudoku();
         return readySudoku;
     }
 
