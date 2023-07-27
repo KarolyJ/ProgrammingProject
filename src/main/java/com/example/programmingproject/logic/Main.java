@@ -1,9 +1,5 @@
 package com.example.programmingproject.logic;
 
-import com.example.programmingproject.logic.Grid;
-
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) {
         Grid grid = new Grid();
@@ -14,12 +10,5 @@ public class Main {
         grid.printHiddenSudoku();
         System.out.println("////////////////");
         System.out.println(grid.checkTheAnswers());
-        System.out.println("////////////////");
-
-        System.out.println();
-
-        Sudoku s = new Sudoku(9);
-        s.fillValues();
-        //s.printSudoku();
     }
 }
