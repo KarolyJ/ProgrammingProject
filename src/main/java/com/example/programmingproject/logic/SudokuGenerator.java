@@ -2,20 +2,20 @@ package com.example.programmingproject.logic;
 //using the idea from https://www.geeksforgeeks.org/program-sudoku-generator/ this site.
 import java.lang.*;
 
-public class Sudoku
+public class SudokuGenerator
 {
-    int[] mat[];
+    int[][] mat;
     int N; // number of columns/rows.
     int SRN; // square root of N
 
     // Constructor
-    public Sudoku(int N)
+    public SudokuGenerator(int N)
     {
         this.N = N;
 
         // Compute square root of N
-        Double SRNd = Math.sqrt(N);
-        SRN = SRNd.intValue();
+        double SRNd = Math.sqrt(N);
+        SRN = (int) SRNd;
 
         mat = new int[N][N];
     }
