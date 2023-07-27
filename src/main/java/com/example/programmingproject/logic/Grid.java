@@ -1,6 +1,8 @@
 package com.example.programmingproject.logic;
 //This suggests that the minimum number of clues to provide in a grid is 17.
 
+import java.util.Arrays;
+
 public class Grid {
     private final int[][] base = new int[][]{
             {2, 3, 9, 4, 1, 5, 7, 6, 8},
@@ -45,7 +47,12 @@ public class Grid {
     }
 
     public  void setReadySudoku(){
-        readySudoku = getBase();
+        // Create a deep copy of the base array for readySudoku
+        readySudoku = new int[base.length][base[0].length];
+        for (int i = 0; i < base.length; i++) {
+            readySudoku[i] = Arrays.copyOf(base[i], base[i].length);
+        }
+
         this.hideSudoku();
     }
 
