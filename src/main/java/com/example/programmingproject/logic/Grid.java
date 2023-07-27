@@ -58,7 +58,6 @@ public class Grid {
 
     public boolean checkTheAnswers(){
         //TODO create a button which check the answers
-        //TODO fix the logic bc it's always true
         if (base.length != readySudoku.length || base[0].length != readySudoku[0].length)
             return false;
 
