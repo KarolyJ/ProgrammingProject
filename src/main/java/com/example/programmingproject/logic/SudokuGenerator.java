@@ -2,22 +2,20 @@ package com.example.programmingproject.logic;
 //using the idea from https://www.geeksforgeeks.org/program-sudoku-generator/ this site.
 import java.lang.*;
 
-public class Sudoku
+public class SudokuGenerator
 {
-    int[] mat[];
+    int[][] mat;
     int N; // number of columns/rows.
     int SRN; // square root of N
-    int K; // No. Of missing digits
 
     // Constructor
-    Sudoku(int N, int K)
+    public SudokuGenerator(int N)
     {
         this.N = N;
-        this.K = K;
 
         // Compute square root of N
-        Double SRNd = Math.sqrt(N);
-        SRN = SRNd.intValue();
+        double SRNd = Math.sqrt(N);
+        SRN = (int) SRNd;
 
         mat = new int[N][N];
     }
@@ -30,9 +28,6 @@ public class Sudoku
 
         // Fill remaining blocks
         fillRemaining(0, SRN);
-
-        // Remove Randomly K digits to make game
-        removeKDigits();
     }
 
     // Fill the diagonal SRN number of SRN x SRN matrices
@@ -153,42 +148,5 @@ public class Sudoku
             }
         }
         return false;
-    }
-
-    // Remove the K no. of digits to
-    // complete game
-    public void removeKDigits()
-    {
-        int count = K;
-        while (count != 0)
-        {
-            int cellId = randomGenerator(N*N)-1;
-
-            // System.out.println(cellId);
-            // extract coordinates i  and j
-            int i = (cellId/N);
-            int j = cellId%9;
-            if (j != 0)
-                j = j - 1;
-
-            // System.out.println(i+" "+j);
-            if (mat[i][j] != 0)
-            {
-                count--;
-                mat[i][j] = 0;
-            }
-        }
-    }
-
-    // Print sudoku
-    public void printSudoku()
-    {
-        for (int i = 0; i<N; i++)
-        {
-            for (int j = 0; j<N; j++)
-                System.out.print(mat[i][j] + " ");
-            System.out.println();
-        }
-        System.out.println();
     }
 }

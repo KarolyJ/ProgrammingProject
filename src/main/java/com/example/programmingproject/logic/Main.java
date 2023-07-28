@@ -1,7 +1,5 @@
 package com.example.programmingproject.logic;
 
-import com.example.programmingproject.logic.Grid;
-
 public class Main {
     public static void main(String[] args) {
         Grid grid = new Grid();
@@ -10,11 +8,7 @@ public class Main {
         System.out.println("////////////////");
         System.out.println();
         grid.printHiddenSudoku();
-
-        System.out.println();
-
-        Sudoku s = new Sudoku(9, 0);
-        s.fillValues();
-        s.printSudoku();
+        System.out.println("////////////////");
+        System.out.println(grid.checkTheAnswers());
     }
 }
