@@ -2,9 +2,12 @@
 // Decompiled by Procyon v0.5.36
 // 
 
-package com.example.demo;
+package com.example.programmingproject.gui;
 
 import java.io.IOException;
+import java.util.Objects;
+
+import com.example.programmingproject.gui.HelloApplication;
 import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -29,7 +32,7 @@ public class Controller2
     @FXML
     void switchToEasy(final MouseEvent event) throws IOException {
         final Stage stage = (Stage)this.easy.getScene().getWindow();
-        final Parent root = (Parent)FXMLLoader.load(HelloApplication.class.getResource("easy.fxml"));
+        final Parent root = FXMLLoader.load(Objects.requireNonNull(HelloApplication.class.getResource("easy.fxml")));
         stage.setScene(new Scene(root));
         stage.setTitle("The Fancy Sudoku!");
     }
@@ -37,7 +40,7 @@ public class Controller2
     @FXML
     void switchToMedium(final MouseEvent event) throws IOException {
         final Stage stage = (Stage)this.medium.getScene().getWindow();
-        final Parent root = (Parent)FXMLLoader.load(HelloApplication.class.getResource("medium.fxml"));
+        final Parent root = FXMLLoader.load(Objects.requireNonNull(HelloApplication.class.getResource("medium.fxml")));
         stage.setScene(new Scene(root));
         stage.setTitle("The Fancy Sudoku!");
     }
