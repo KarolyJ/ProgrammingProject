@@ -7,7 +7,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
 
 public class HelloApplication extends Application {
     @Override
@@ -15,7 +14,7 @@ public class HelloApplication extends Application {
         //for debugging fxml
         //URL location = getClass().getResource("menu.fxml");
         //System.out.println(location);
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("menu.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root, 400, 400);
         stage.setTitle("The Fancy Sudoku!");
