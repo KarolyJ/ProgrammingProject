@@ -5,45 +5,46 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programmingproject.gui.Controller2">
+<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programmingproject.gui.HelloController">
    <children>
-      <AnchorPane layoutY="1.0" prefHeight="600.0" prefWidth="600.0">
+      <AnchorPane layoutY="1.0" prefHeight="650.0" prefWidth="600.0">
          <children>
             <Label layoutX="163.0" layoutY="29.0" text="The Fancy Sudoku" AnchorPane.topAnchor="29.0">
                <font>
                   <Font size="34.0" />
                </font>
             </Label>
-            <Button fx:id="easy" layoutX="233.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#switchToEasy" prefHeight="46.0" prefWidth="133.0" text="Easy lvl" AnchorPane.bottomAnchor="453.6" AnchorPane.leftAnchor="233.0" AnchorPane.rightAnchor="233.4" AnchorPane.topAnchor="100.0">
+            <Button fx:id="easy" layoutX="231.0" layoutY="162.0" mnemonicParsing="false" onMouseClicked="#switchToEasy" prefHeight="46.0" prefWidth="134.0" text="Easy lvl" AnchorPane.bottomAnchor="442.0" AnchorPane.leftAnchor="231.0" AnchorPane.rightAnchor="235.0" AnchorPane.topAnchor="162.0">
                <font>
                   <Font size="21.0" />
                </font>
             </Button>
-            <Button fx:id="medium" layoutX="233.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#switchToMedium" prefHeight="46.0" prefWidth="133.0" text="Medium lvl">
+            <Button fx:id="medium" layoutX="233.0" layoutY="226.0" mnemonicParsing="false" onMouseClicked="#switchToMedium" prefHeight="46.0" prefWidth="134.0" text="Medium lvl">
                <font>
                   <Font size="21.0" />
                </font>
             </Button>
-            <Button fx:id="settings" layoutX="233.0" layoutY="336.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="Settings">
+            <Button fx:id="settings" layoutX="231.0" layoutY="426.0" mnemonicParsing="false" onMouseClicked="#switchToSettings" prefHeight="46.0" prefWidth="134.0" text="Settings">
                <font>
                   <Font size="21.0" />
                </font>
             </Button>
-            <Button fx:id="ranking" layoutX="233.0" layoutY="277.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="Ranking List">
+            <Button fx:id="ranking" layoutX="232.0" layoutY="360.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="Ranking List">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="hard" layoutX="233.0" layoutY="219.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="Hard lvl">
+            <Button fx:id="hard" layoutX="233.0" layoutY="292.0" mnemonicParsing="false" onMouseClicked="#switchToHard" prefHeight="46.0" prefWidth="134.0" text="Hard lvl">
                <font>
                   <Font size="21.0" />
                </font>
             </Button>
-            <Button fx:id="rules" layoutX="232.0" layoutY="400.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="Rules">
+            <Button fx:id="rules" layoutX="230.0" layoutY="488.0" mnemonicParsing="false" onMouseClicked="#switchToRules" prefHeight="46.0" prefWidth="134.0" text="Rules">
                <font>
                   <Font size="21.0" />
                </font>
             </Button>
+            <Label layoutX="284.0" layoutY="618.0" text="2023" />
          </children>
       </AnchorPane>
    </children>
