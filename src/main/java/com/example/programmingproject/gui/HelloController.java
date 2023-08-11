@@ -43,7 +43,7 @@ public class HelloController
     @FXML
     public void switchToEasy(MouseEvent event) throws IOException {
         final Stage stage = (Stage)this.easy.getScene().getWindow();
-        final Parent root = FXMLLoader.load(Objects.requireNonNull(HelloApplication.class.getResource("easy.fxml")));
+        final Parent root = FXMLLoader.load(Objects.requireNonNull(HelloApplication.class.getResource("sudoku-grid.fxml")));
         stage.setScene(new Scene(root));
         stage.setTitle("The Fancy Sudoku!");
     }
