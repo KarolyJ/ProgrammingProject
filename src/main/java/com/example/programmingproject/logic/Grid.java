@@ -1,24 +1,13 @@
 package com.example.programmingproject.logic;
 //This suggests that the minimum number of clues to provide in a grid is 17.
 
+import java.io.Serializable;
 import java.util.Arrays;
 
-public class Grid {
-//    private final int[][] base = new int[][]{
-//            {2, 3, 9, 4, 1, 5, 7, 6, 8},
-//            {7, 8, 4, 2, 3, 6, 5, 1, 9},
-//            {1, 6, 5, 9, 8, 7, 2, 3, 4},
-//            {3, 1, 7, 6, 9, 4, 8, 2, 5},
-//            {4, 5, 8, 1, 2, 3, 6, 9, 7},
-//            {9, 2, 6, 7, 5, 8, 3, 4, 1},
-//            {8, 4, 3, 5, 6, 9, 1, 7, 2},
-//            {6, 7, 1, 8, 4, 2, 9, 5, 3},
-//            {5, 9, 2, 3, 7, 1, 4, 8, 6}};
-
+public class Grid implements Serializable {
     private final int[][] base;
+    private Coin coinSystem;
     SudokuGenerator sudoku = new SudokuGenerator(9);
-
-    //TODO merge it with the class Sudoku
 
     private int[][] readySudoku;
 
@@ -26,6 +15,7 @@ public class Grid {
         sudoku.fillValues();
         base = sudoku.mat;
         setLevelOfTheGame(MIN_LEVEL); //TODO change for later
+        coinSystem = new Coin();
     }
 
     private final int MIN_LEVEL = 20; // the amount of hidden numbers
@@ -48,6 +38,10 @@ public class Grid {
     public int[][] getReadySudoku(){
         setReadySudoku();
         return readySudoku;
+    }
+
+    public Coin getCoinSystem() {
+        return coinSystem;
     }
 
     public  void setReadySudoku(){
