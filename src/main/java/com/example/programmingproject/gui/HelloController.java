@@ -32,6 +32,8 @@ public class HelloController
     private Button settings;
     @FXML
     private Button rules;
+    @FXML
+    private Button back;
 
     @FXML
     public void switchToMenu(final MouseEvent event) throws IOException {
@@ -70,6 +72,13 @@ public class HelloController
     public void switchToRules(MouseEvent event) throws IOException{
         final Stage stage = (Stage)this.rules.getScene().getWindow();
         final Parent root = FXMLLoader.load(Objects.requireNonNull(HelloApplication.class.getResource("rules.fxml")));
+        stage.setScene(new Scene(root));
+        stage.setTitle("The Fancy Sudoku!");
+    }
+
+    public void switchToMenuBack(MouseEvent event) throws IOException {
+        final Stage stage = (Stage)this.back.getScene().getWindow();
+        final Parent root = FXMLLoader.load(Objects.requireNonNull(HelloApplication.class.getResource("menu.fxml")));
         stage.setScene(new Scene(root));
         stage.setTitle("The Fancy Sudoku!");
     }
