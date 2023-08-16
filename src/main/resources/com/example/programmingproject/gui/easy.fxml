@@ -8,7 +8,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programmingproject.gui.HelloController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff" height="200.0" layoutY="30.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="200.0" layoutY="30.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="200.0" layoutX="200.0" layoutY="30.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="200.0" layoutX="400.0" layoutY="30.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="200.0" layoutY="220.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
