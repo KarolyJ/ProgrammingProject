@@ -4,26 +4,20 @@ import com.example.programmingproject.logic.Grid;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashMap;
 
-public class SudokuGridController <T> {
-    public GridPane container;
+public class SudokuGridController {
     public Button backButton;
     public Pane sudoku_pane;
 
@@ -38,32 +32,6 @@ public class SudokuGridController <T> {
     //TODO implement a way to check answers
     //TODO implement a timer
     public void initialize() {
-        Grid grid = new Grid();
-        int [][] puzzle = grid.getReadySudoku();
-        //used generic type of array so both TextField and Text can be stored in one array
-        Generic2DArray cells = new Generic2DArray<>(9, 9);
-        //System.out.println(Arrays.deepToString(puzzle));
-
-//        for(int i = 0; i < 9; i++) {
-//            for (int j = 0; j < 9; j++) {
-//                if(puzzle[i][j] == 0) {
-//                    TextField field = new TextField();
-//                    cells.setElement(i, j, field);
-//                    container.add(field, i, j);
-//                } else {
-//                    Text text = new Text(String.valueOf(puzzle[i][j]));
-//                    cells.setElement(i, j , text);
-//                    container.add(text, i, j);
-//                }
-//            }
-//        }
-        //to see what types are stored in the generic array
-//        for(int i = 0; i < 9; i++) {
-//            for (int j = 0; j < 9; j++) {
-//                System.out.println(cells.getElement(i, j));
-//            }
-//        }
-
         drawGridLines(sudoku_pane);
         drawTiles(sudoku_pane);
     }
@@ -123,11 +91,8 @@ public class SudokuGridController <T> {
         Grid grid = new Grid();
         int [][] puzzle = grid.getReadySudoku();
         if(puzzle[x][y] != 0) {
-            System.out.println(puzzle[x][y]);
             tile.setText(String.valueOf(puzzle[x][y]));
         }
-
-
     }
 
     private void styleTile(SudokuTile tile, int x, int y) {
