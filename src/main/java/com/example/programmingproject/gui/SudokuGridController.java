@@ -1,12 +1,17 @@
 package com.example.programmingproject.gui;
 
 import com.example.programmingproject.logic.Grid;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.Label;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.Pane;
@@ -15,12 +20,14 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class SudokuGridController {
     public Button backButton;
     public Pane sudoku_pane;
+
+    public Label livesText;
+    public ButtonBar buttonBar;
 
     private HashMap<Coordinates, SudokuTile> textFieldCoordinates = new HashMap<>();
 
@@ -28,11 +35,15 @@ public class SudokuGridController {
 
     private final int BOARD_X_AND_Y = 576;
 
-    private Grid grid = new Grid();
+    private final Grid grid = new Grid();
 
     private final int[][] puzzle = grid.getReadySudoku();
 
+    private final int[][] completePuzzle = grid.getBase();
+
     private int[][] outputPuzzle = new int[9][9];
+
+    public int lives = 3;
 
     //initialize to load these after the scene is loaded
     //TODO implement a way to check answers
@@ -42,6 +53,8 @@ public class SudokuGridController {
     public void initialize() {
         drawGridLines(sudoku_pane);
         drawTiles(sudoku_pane);
+        livesText = new Label("Lives : " + lives);
+        buttonBar.getButtons().add(livesText);
     }
 
     private void drawGridLines(Pane root) {
@@ -81,12 +94,17 @@ public class SudokuGridController {
             for (int j = 0; j < 9; j++) {
                 int x = X_PADDING + i * TILE_X_AND_Y;
                 int y = Y_PADDING + j * TILE_X_AND_Y;
+                int value = completePuzzle[j][i];
 
-                SudokuTile tile = new SudokuTile(i, j);
+                //the completed puzzle is saved as the value of the SudokuTile object, so the object contains solution
+                SudokuTile tile = new SudokuTile(i, j, value);
 
                 styleTile(tile, x, y);
+
+                tile.addEventHandler(KeyEvent.KEY_PRESSED, checkInput());
+
                 //had to change i, j to j, i
-                boardNumbers(tile, j, i);
+                drawNumbers(tile, j, i);
 
                 textFieldCoordinates.put(new Coordinates(i, j), tile);
 
@@ -95,7 +113,7 @@ public class SudokuGridController {
         }
     }
 
-    private void boardNumbers(SudokuTile tile, int x, int y) {
+    private void drawNumbers(SudokuTile tile, int x, int y) {
         if (puzzle[x][y] != 0) {
             tile.setText(String.valueOf(puzzle[x][y]));
         }
@@ -134,5 +152,21 @@ public class SudokuGridController {
 
     public int[][] getOutputPuzzle() {
         return outputPuzzle;
+    }
+
+    private EventHandler<KeyEvent> checkInput() {
+
+        return event -> {
+//                to test inputs
+            if(event.getCode() != KeyCode.BACK_SPACE) {
+                if (event.getCode().getChar().equals(event.getTarget().toString())) {
+                    System.out.println("Correct");
+                } else {
+                    lives--;
+                    livesText.setText("Lives : " + lives);
+                    System.out.println("Wrong");
+                }
+            }
+        };
     }
 }

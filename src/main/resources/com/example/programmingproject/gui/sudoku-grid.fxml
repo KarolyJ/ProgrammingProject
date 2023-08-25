@@ -10,13 +10,13 @@
 
 <!--</GridPane>-->
    <top>
-      <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER" fx:id="buttonBar">
         <buttons>
-          <Button mnemonicParsing="false" text="Back" onMouseClicked="#switchToMenu" fx:id="backButton"/>
+          <Button fx:id="backButton" mnemonicParsing="false" onMouseClicked="#switchToMenu" text="Back" />
         </buttons>
       </ButtonBar>
    </top>
    <center>
-      <Pane prefHeight="732" prefWidth="668" BorderPane.alignment="CENTER" fx:id="sudoku_pane"/>
+      <Pane fx:id="sudoku_pane" prefHeight="732" prefWidth="668" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>
