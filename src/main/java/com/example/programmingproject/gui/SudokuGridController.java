@@ -15,6 +15,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class SudokuGridController {
@@ -27,10 +28,17 @@ public class SudokuGridController {
 
     private final int BOARD_X_AND_Y = 576;
 
+    private Grid grid = new Grid();
+
+    private final int[][] puzzle = grid.getReadySudoku();
+
+    private int[][] outputPuzzle = new int[9][9];
+
     //initialize to load these after the scene is loaded
-    //TODO make it look better
     //TODO implement a way to check answers
     //TODO implement a timer
+    //TODO test the grid, if the shown numbers correspond to the puzzle array
+
     public void initialize() {
         drawGridLines(sudoku_pane);
         drawTiles(sudoku_pane);
@@ -60,7 +68,7 @@ public class SudokuGridController {
             );
 
             root.getChildren().addAll(verticalLine, horizontalLine);
-        i++;
+            i++;
         }
     }
 
@@ -69,7 +77,7 @@ public class SudokuGridController {
         final int Y_PADDING = 50;
         final int TILE_X_AND_Y = 64;
 
-        for(int i = 0; i < 9; i ++) {
+        for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 int x = X_PADDING + i * TILE_X_AND_Y;
                 int y = Y_PADDING + j * TILE_X_AND_Y;
@@ -77,22 +85,22 @@ public class SudokuGridController {
                 SudokuTile tile = new SudokuTile(i, j);
 
                 styleTile(tile, x, y);
+                //had to change i, j to j, i
+                boardNumbers(tile, j, i);
 
                 textFieldCoordinates.put(new Coordinates(i, j), tile);
-
-                boardNumbers(tile, i, j);
 
                 root.getChildren().add(tile);
             }
         }
     }
 
-    private void boardNumbers(SudokuTile tile, int x, int y){
-        Grid grid = new Grid();
-        int [][] puzzle = grid.getReadySudoku();
-        if(puzzle[x][y] != 0) {
+    private void boardNumbers(SudokuTile tile, int x, int y) {
+        if (puzzle[x][y] != 0) {
             tile.setText(String.valueOf(puzzle[x][y]));
         }
+        //use outputPuzzle for testing
+        outputPuzzle[x][y] = puzzle[x][y];
     }
 
     private void styleTile(SudokuTile tile, int x, int y) {
@@ -118,9 +126,13 @@ public class SudokuGridController {
 
     @FXML
     public void switchToMenu(final MouseEvent event) throws IOException {
-        final Stage stage = (Stage)this.backButton.getScene().getWindow();
+        final Stage stage = (Stage) this.backButton.getScene().getWindow();
         final Parent root = (Parent) FXMLLoader.load(HelloApplication.class.getResource("menu.fxml"));
         stage.setScene(new Scene(root));
         stage.setTitle("The Fancy Sudoku!");
+    }
+
+    public int[][] getOutputPuzzle() {
+        return outputPuzzle;
     }
 }
