@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programmingproject.gui.controllers.NewGameController">
+   <children>
+      <Label layoutX="232.0" layoutY="55.0" text="Select Difficulty">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="294.0" layoutY="130.0" mnemonicParsing="false" text="Easy" fx:id="easyGameButton" onMouseClicked="#switchToEasyGame"/>
+      <Button layoutX="284.0" layoutY="188.0" mnemonicParsing="false" text="Medium" fx:id="mediumGameButton" onMouseClicked="#switchToMediumGame"/>
+      <Button layoutX="293.0" layoutY="244.0" mnemonicParsing="false" text="Hard" fx:id="hardGameButton" onMouseClicked="#switchToHardGame"/>
+      <Button layoutX="500.0" layoutY="43.0" mnemonicParsing="false" text="Back" fx:id="backButton" onMouseClicked="#switchToMenu"/>
+   </children>
+</AnchorPane>

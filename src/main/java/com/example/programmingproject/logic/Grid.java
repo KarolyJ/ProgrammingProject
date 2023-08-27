@@ -14,7 +14,7 @@ public class Grid implements Serializable {
     public Grid() {
         sudoku.fillValues();
         base = sudoku.mat;
-        setLevelOfTheGame(MIN_LEVEL); //TODO change for later
+//        setLevelOfTheGame(30); //TODO change for later
         coinSystem = new Coin();
     }
 

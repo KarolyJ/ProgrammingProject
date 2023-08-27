@@ -54,16 +54,20 @@ public class SudokuGridController {
 
     private int countCorrectGuesses = 0;
 
-    //initialize to load these after the scene is loaded
     //TODO implement a timer
     //TODO test the grid, if the shown numbers correspond to the puzzle array
 
+    //initialize to load these after the scene is loaded
     public void initialize() {
-        drawGridLines(sudoku_pane);
-        drawTiles(sudoku_pane);
         livesText = new Label("Lives : " + lives);
         buttonBar.getButtons().add(livesText);
+        //we access the information stored  in the singleton class
+        DifficultyHolder holder = DifficultyHolder.getInstance();
+        grid.setLevelOfTheGame(holder.getDifficulty());
+        grid.hideSudoku();
         grid.printSudoku();
+        drawGridLines(sudoku_pane);
+        drawTiles(sudoku_pane);
     }
 
     private void drawGridLines(Pane root) {
