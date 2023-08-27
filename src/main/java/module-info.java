@@ -11,5 +11,9 @@ module com.example.programmingproject {
 
     opens com.example.programmingproject.gui to javafx.fxml;
     exports com.example.programmingproject.gui;
+    exports com.example.programmingproject.gui.controllers;
+    opens com.example.programmingproject.gui.controllers to javafx.fxml;
+    exports com.example.programmingproject.gui.exceptions;
+    opens com.example.programmingproject.gui.exceptions to javafx.fxml;
 
 }

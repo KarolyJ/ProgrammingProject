@@ -1,11 +1,12 @@
 
 
 
-package com.example.programmingproject.gui;
+package com.example.programmingproject.gui.controllers;
 
 import java.io.IOException;
 import java.util.Objects;
 
+import com.example.programmingproject.gui.HelloApplication;
 import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

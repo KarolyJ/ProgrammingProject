@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programmingproject.gui.controllers.GameOverController">
+   <children>
+      <Label layoutX="203.0" layoutY="83.0" prefHeight="83.0" prefWidth="205.0" text="GAME OVER">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Button layoutX="256.0" layoutY="188.0" mnemonicParsing="false" text="Back to menu" fx:id="backButton" onMouseClicked="#switchToMenu"/>
+   </children>
+</AnchorPane>

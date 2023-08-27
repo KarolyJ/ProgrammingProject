@@ -27,6 +27,7 @@ public class Grid implements Serializable {
         return levelOfTheGame;
     }
 
+    //TODO finish this method to set difficulties
     public void setLevelOfTheGame(int levelOfTheGame) {
         this.levelOfTheGame = levelOfTheGame;
     }

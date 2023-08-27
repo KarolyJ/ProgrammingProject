@@ -1,5 +1,8 @@
-package com.example.programmingproject.gui;
+package com.example.programmingproject.gui.controllers;
 
+import com.example.programmingproject.gui.*;
+import com.example.programmingproject.gui.exceptions.LostGameException;
+import com.example.programmingproject.gui.exceptions.WonGameException;
 import com.example.programmingproject.logic.Grid;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -10,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -20,6 +24,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SudokuGridController {
@@ -45,8 +50,11 @@ public class SudokuGridController {
 
     public int lives = 3;
 
+    private int hiddenNumbers = grid.getLevelOfTheGame();
+
+    private int countCorrectGuesses = 0;
+
     //initialize to load these after the scene is loaded
-    //TODO implement a way to check answers
     //TODO implement a timer
     //TODO test the grid, if the shown numbers correspond to the puzzle array
 
@@ -55,6 +63,7 @@ public class SudokuGridController {
         drawTiles(sudoku_pane);
         livesText = new Label("Lives : " + lives);
         buttonBar.getButtons().add(livesText);
+        grid.printSudoku();
     }
 
     private void drawGridLines(Pane root) {
@@ -103,6 +112,13 @@ public class SudokuGridController {
 
                 tile.addEventHandler(KeyEvent.KEY_PRESSED, checkInput());
 
+                // strips out non-numeric characters if pasted
+                tile.textProperty().addListener((observable, oldValue, newValue) -> {
+                    if (!newValue.matches("\\d*")) {
+                        tile.setText(newValue.replaceAll("[^\\d]", ""));
+                    }
+                });
+
                 //had to change i, j to j, i
                 drawNumbers(tile, j, i);
 
@@ -116,6 +132,7 @@ public class SudokuGridController {
     private void drawNumbers(SudokuTile tile, int x, int y) {
         if (puzzle[x][y] != 0) {
             tile.setText(String.valueOf(puzzle[x][y]));
+            tile.setEditable(false);
         }
         //use outputPuzzle for testing
         outputPuzzle[x][y] = puzzle[x][y];
@@ -156,15 +173,53 @@ public class SudokuGridController {
 
     private EventHandler<KeyEvent> checkInput() {
 
+        //creating an array with the allowed keycodes, so we can control the input
+        ArrayList<KeyCode> keyCodeArrayList = new ArrayList<>();
+        keyCodeArrayList.add(KeyCode.DIGIT1);
+        keyCodeArrayList.add(KeyCode.DIGIT2);
+        keyCodeArrayList.add(KeyCode.DIGIT3);
+        keyCodeArrayList.add(KeyCode.DIGIT4);
+        keyCodeArrayList.add(KeyCode.DIGIT5);
+        keyCodeArrayList.add(KeyCode.DIGIT6);
+        keyCodeArrayList.add(KeyCode.DIGIT7);
+        keyCodeArrayList.add(KeyCode.DIGIT8);
+        keyCodeArrayList.add(KeyCode.DIGIT9);
+
+
         return event -> {
-//                to test inputs
-            if(event.getCode() != KeyCode.BACK_SPACE) {
-                if (event.getCode().getChar().equals(event.getTarget().toString())) {
-                    System.out.println("Correct");
+//                 to test inputs
+            if(keyCodeArrayList.contains(event.getCode())) {
+                if (countCorrectGuesses + 1 == hiddenNumbers) {
+                    try {
+                        //if game is won, then change to another window, passing down the current stage
+                        throw new WonGameException("YOU WON", (Stage) backButton.getScene().getWindow());
+                    } catch (IOException | WonGameException e) {
+                        System.out.println(e.getMessage());
+                    }
                 } else {
-                    lives--;
-                    livesText.setText("Lives : " + lives);
-                    System.out.println("Wrong");
+                    if (event.getCode().getChar().equals(event.getTarget().toString())) {
+                        System.out.println("Correct");
+                        //increase count if it reaches the numbers of hiddenNumbers the game is won
+                        countCorrectGuesses++;
+                        //set the text field/input a permanent part of the game if the answer is correct
+                        TextField eventSource = (TextField) event.getSource();
+                        eventSource.setText(event.getCode().getChar());
+                        eventSource.setEditable(false);
+                    } else {
+                        //if the game is lost, change to another window
+                        if (lives < 2) {
+                            try {
+                                throw new LostGameException("GAME OVER",
+                                        (Stage) backButton.getScene().getWindow());
+                            } catch (LostGameException | IOException e) {
+                                System.out.println(e.getMessage());
+                            }
+                        }
+                        //lose a life if the input is wrong
+                        lives--;
+                        livesText.setText("Lives : " + lives);
+                        System.out.println("Wrong");
+                    }
                 }
             }
         };
