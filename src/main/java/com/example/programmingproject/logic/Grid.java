@@ -14,7 +14,6 @@ public class Grid implements Serializable {
     public Grid() {
         sudoku.fillValues();
         base = sudoku.mat;
-//        setLevelOfTheGame(30); //TODO change for later
         coinSystem = new Coin();
     }
 
@@ -27,7 +26,6 @@ public class Grid implements Serializable {
         return levelOfTheGame;
     }
 
-    //TODO finish this method to set difficulties
     public void setLevelOfTheGame(int levelOfTheGame) {
         this.levelOfTheGame = levelOfTheGame;
     }
@@ -56,7 +54,6 @@ public class Grid implements Serializable {
     }
 
     public boolean checkTheAnswers(){
-        //TODO create a button which check the answers
         if (base.length != readySudoku.length || base[0].length != readySudoku[0].length)
             return false;
 
