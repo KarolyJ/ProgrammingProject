@@ -8,27 +8,27 @@
    <children>
       <AnchorPane layoutY="1.0" prefHeight="650.0" prefWidth="600.0">
          <children>
-            <Label layoutX="163.0" layoutY="29.0" text="The Fancy Sudoku" AnchorPane.topAnchor="29.0">
+            <Label layoutX="163.0" layoutY="29.0" style="-fx-text-fill: #000000; -fx-font-weight: bold;" text="The Fancy Sudoku" AnchorPane.topAnchor="29.0">
                <font>
                   <Font size="34.0" />
                </font>
             </Label>
-            <Button fx:id="settings" layoutX="230.0" layoutY="338.0" mnemonicParsing="false" onMouseClicked="#switchToSettings" prefHeight="46.0" prefWidth="134.0" text="Settings">
+            <Button fx:id="settings" layoutX="230.0" layoutY="338.0" mnemonicParsing="false" onMouseClicked="#switchToSettings" prefHeight="46.0" prefWidth="150.0" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" text="Settings">
                <font>
                   <Font size="21.0" />
                </font>
             </Button>
-            <Button fx:id="ranking" layoutX="231.0" layoutY="272.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="Ranking List">
+            <Button fx:id="ranking" layoutX="231.0" layoutY="272.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="150.0" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" text="Ranking List">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="newGame" layoutX="232.0" layoutY="204.0" mnemonicParsing="false" onMouseClicked="#switchToGame" prefHeight="46.0" prefWidth="134.0" text="New Game">
+            <Button fx:id="newGame" layoutX="232.0" layoutY="204.0" mnemonicParsing="false" onMouseClicked="#switchToGame" prefHeight="46.0" prefWidth="150.0" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" text="New Game">
                <font>
                   <Font size="21.0" />
                </font>
             </Button>
-            <Button fx:id="rules" layoutX="229.0" layoutY="400.0" mnemonicParsing="false" onMouseClicked="#switchToRules" prefHeight="46.0" prefWidth="134.0" text="Rules">
+            <Button fx:id="rules" layoutX="229.0" layoutY="400.0" mnemonicParsing="false" onMouseClicked="#switchToRules" prefHeight="46.0" prefWidth="150.0" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" text="Rules">
                <font>
                   <Font size="21.0" />
                </font>
