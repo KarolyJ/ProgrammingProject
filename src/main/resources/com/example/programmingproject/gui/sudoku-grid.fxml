@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 
-<BorderPane prefHeight="800" prefWidth="700" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programmingproject.gui.controllers.SudokuGridController">
+<BorderPane prefHeight="750" prefWidth="650" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programmingproject.gui.controllers.SudokuGridController">
 
 <!--<GridPane fx:id="container" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">-->
 <!--&lt;!&ndash;            gridLinesVisible="true"&ndash;&gt;-->
 
 <!--</GridPane>-->
    <top>
-      <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER" fx:id="buttonBar">
+      <ButtonBar fx:id="buttonBar" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <buttons>
           <Button fx:id="backButton" mnemonicParsing="false" onMouseClicked="#switchToMenu" text="Back" />
         </buttons>
       </ButtonBar>
    </top>
    <center>
-      <Pane fx:id="sudoku_pane" prefHeight="732" prefWidth="668" BorderPane.alignment="CENTER" />
+      <Pane fx:id="sudoku_pane" prefHeight="650.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>

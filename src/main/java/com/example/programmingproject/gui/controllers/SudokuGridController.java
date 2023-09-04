@@ -30,8 +30,8 @@ import java.util.HashMap;
 public class SudokuGridController {
     public Button backButton;
     public Pane sudoku_pane;
-
     public Label livesText;
+    public Label timer;
     public ButtonBar buttonBar;
 
     private HashMap<Coordinates, SudokuTile> textFieldCoordinates = new HashMap<>();
@@ -61,6 +61,8 @@ public class SudokuGridController {
     public void initialize() {
         livesText = new Label("Lives : " + lives);
         buttonBar.getButtons().add(livesText);
+        timer = new Label("0:00:00");
+        buttonBar.getButtons().add(timer);
         //we access the information stored  in the singleton class
         DifficultyHolder holder = DifficultyHolder.getInstance();
         grid.setLevelOfTheGame(holder.getDifficulty());
