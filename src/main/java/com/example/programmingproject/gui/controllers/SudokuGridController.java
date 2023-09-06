@@ -31,7 +31,7 @@ public class SudokuGridController {
     public Button backButton;
     public Pane sudoku_pane;
     public Label livesText;
-    public Label timer;
+    public Label timerText;
     public ButtonBar buttonBar;
 
     private HashMap<Coordinates, SudokuTile> textFieldCoordinates = new HashMap<>();
@@ -50,6 +50,8 @@ public class SudokuGridController {
 
     public int lives = 3;
 
+    public String timer = "0:00:00";
+
     private int hiddenNumbers = grid.getLevelOfTheGame();
 
     private int countCorrectGuesses = 0;
@@ -61,8 +63,8 @@ public class SudokuGridController {
     public void initialize() {
         livesText = new Label("Lives : " + lives);
         buttonBar.getButtons().add(livesText);
-        timer = new Label("0:00:00");
-        buttonBar.getButtons().add(timer);
+        timerText = new Label(timer);
+        buttonBar.getButtons().add(timerText);
         //we access the information stored  in the singleton class
         DifficultyHolder holder = DifficultyHolder.getInstance();
         grid.setLevelOfTheGame(holder.getDifficulty());
