@@ -4,6 +4,9 @@ import com.example.programmingproject.gui.*;
 import com.example.programmingproject.gui.exceptions.LostGameException;
 import com.example.programmingproject.gui.exceptions.WonGameException;
 import com.example.programmingproject.logic.Grid;
+import com.example.programmingproject.logic.Time;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,7 +24,9 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,8 +36,20 @@ public class SudokuGridController {
     public Button backButton;
     public Pane sudoku_pane;
     public Label livesText;
-    public Label timerText;
     public ButtonBar buttonBar;
+    public Text timer;
+    Time time = new Time("00:00:00");
+
+    Timeline timeline = new Timeline(
+            new KeyFrame(Duration.seconds(1),
+                    e -> {
+//                        if(time.getCurrentTime().equals(alarmTime.getText())){
+//                            System.out.println("ALARM!");
+//                        }
+                        time.oneSecondPassed();
+                        timer.setText(time.getCurrentTime());
+                    }));
+
 
     private HashMap<Coordinates, SudokuTile> textFieldCoordinates = new HashMap<>();
 
@@ -50,8 +67,6 @@ public class SudokuGridController {
 
     public int lives = 3;
 
-    public String timer = "0:00:00";
-
     private int hiddenNumbers = grid.getLevelOfTheGame();
 
     private int countCorrectGuesses = 0;
@@ -63,8 +78,15 @@ public class SudokuGridController {
     public void initialize() {
         livesText = new Label("Lives : " + lives);
         buttonBar.getButtons().add(livesText);
-        timerText = new Label(timer);
-        buttonBar.getButtons().add(timerText);
+//        timerText = new Label(timer);
+//        buttonBar.getButtons().add(timerText);
+
+        //setting timer
+        timer.setText(time.getCurrentTime());
+
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
+
         //we access the information stored  in the singleton class
         DifficultyHolder holder = DifficultyHolder.getInstance();
         grid.setLevelOfTheGame(holder.getDifficulty());
