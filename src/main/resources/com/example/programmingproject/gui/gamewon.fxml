@@ -4,7 +4,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programmingproject.gui.controllers.GameWonController">
    <children>
       <Label layoutX="210.0" layoutY="103.0" text="YOU WON!">
@@ -12,6 +11,10 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <Button layoutX="256.0" layoutY="200.0" mnemonicParsing="false" text="Back to menu" fx:id="backButton" onMouseClicked="#switchToMenu"/>
+      <Button fx:id="backButton" layoutX="256.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#switchToMenu" text="Back to menu" />
+      <Label fx:id="timeLabel" layoutX="215.0" layoutY="156.0" prefHeight="26.0" prefWidth="176.0" textAlignment="CENTER">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
    </children>
 </AnchorPane>

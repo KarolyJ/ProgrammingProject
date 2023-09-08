@@ -3,6 +3,9 @@ package com.example.programmingproject.logic;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+
+//to get the current time
+
 public class CurrentTime {
 
     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:MM:SS");

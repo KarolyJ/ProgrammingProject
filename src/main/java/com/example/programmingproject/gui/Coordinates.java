@@ -1,5 +1,7 @@
 package com.example.programmingproject.gui;
 
+//for the better way to store tiles, so we know exactly where they are
+
 public class Coordinates {
 
     private final int x;

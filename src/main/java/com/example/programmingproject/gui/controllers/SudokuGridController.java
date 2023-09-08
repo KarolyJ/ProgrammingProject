@@ -43,9 +43,6 @@ public class SudokuGridController {
     Timeline timeline = new Timeline(
             new KeyFrame(Duration.seconds(1),
                     e -> {
-//                        if(time.getCurrentTime().equals(alarmTime.getText())){
-//                            System.out.println("ALARM!");
-//                        }
                         time.oneSecondPassed();
                         timer.setText(time.getCurrentTime());
                     }));
@@ -67,7 +64,7 @@ public class SudokuGridController {
 
     public int lives = 3;
 
-    private int hiddenNumbers = grid.getLevelOfTheGame();
+    private int hiddenNumbers;
 
     private int countCorrectGuesses = 0;
 
@@ -78,18 +75,16 @@ public class SudokuGridController {
     public void initialize() {
         livesText = new Label("Lives : " + lives);
         buttonBar.getButtons().add(livesText);
-//        timerText = new Label(timer);
-//        buttonBar.getButtons().add(timerText);
 
         //setting timer
         timer.setText(time.getCurrentTime());
-
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
 
         //we access the information stored  in the singleton class
         DifficultyHolder holder = DifficultyHolder.getInstance();
         grid.setLevelOfTheGame(holder.getDifficulty());
+        hiddenNumbers = holder.getDifficulty();
         grid.hideSudoku();
         grid.printSudoku();
         drawGridLines(sudoku_pane);
@@ -219,9 +214,12 @@ public class SudokuGridController {
         return event -> {
 //                 to test inputs
             if(keyCodeArrayList.contains(event.getCode())) {
+
                 if (countCorrectGuesses + 1 == hiddenNumbers) {
                     try {
                         //if game is won, then change to another window, passing down the current stage
+                        TimerHolder holder = TimerHolder.getInstance();
+                        holder.setTime(time.getCurrentTime());
                         throw new WonGameException("YOU WON", (Stage) backButton.getScene().getWindow());
                     } catch (IOException | WonGameException e) {
                         System.out.println(e.getMessage());
