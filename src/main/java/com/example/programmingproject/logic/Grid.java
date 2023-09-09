@@ -1,6 +1,9 @@
 package com.example.programmingproject.logic;
 //This suggests that the minimum number of clues to provide in a grid is 17.
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.Arrays;
 
@@ -41,6 +44,17 @@ public class Grid implements Serializable {
 
     public Coin getCoinSystem() {
         return coinSystem;
+    }
+    public int getBalanceSystem() {
+        int balance = 0;
+        // Loading
+        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("savedBalance.ser"))) {
+            Coin loadedCoinData = (Coin) inputStream.readObject();
+            balance = loadedCoinData.getBalance();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return balance;
     }
 
     public  void setReadySudoku(){

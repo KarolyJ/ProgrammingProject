@@ -3,6 +3,7 @@ package com.example.programmingproject.gui.controllers;
 import com.example.programmingproject.gui.*;
 import com.example.programmingproject.gui.exceptions.LostGameException;
 import com.example.programmingproject.gui.exceptions.WonGameException;
+import com.example.programmingproject.logic.Coin;
 import com.example.programmingproject.logic.Grid;
 import com.example.programmingproject.logic.Time;
 import javafx.animation.KeyFrame;
@@ -25,7 +26,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -74,7 +75,13 @@ public class SudokuGridController {
         livesText = new Label("Lives : " + lives);
         buttonBar.getButtons().add(livesText);
 
-        balanceLabel = new Label("Balance: " + grid.getCoinSystem());
+        balanceLabel = new Label("Balance: ");
+        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("savedBalance.ser"))) {
+            outputStream.writeObject(grid.getCoinSystem());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        balanceLabel.setText("Balance: " + grid.getBalanceSystem());
         buttonBar.getButtons().add(balanceLabel);
 
         //setting timer
