@@ -6,7 +6,7 @@ class Coin implements Serializable {
     private int balance;
 
     public Coin() {
-        balance = 0;
+        balance = 100;
     }
 
     public void earnCoins(int amount) {

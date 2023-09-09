@@ -33,6 +33,7 @@ public class SudokuGridController {
     public Button backButton;
     public Pane sudoku_pane;
     public Label livesText;
+    public Label balanceLabel;
     public ButtonBar buttonBar;
     public Text timer;
     Time time = new Time("00:00:00");
@@ -72,6 +73,9 @@ public class SudokuGridController {
     public void initialize() {
         livesText = new Label("Lives : " + lives);
         buttonBar.getButtons().add(livesText);
+
+        balanceLabel = new Label("Balance: " + lives);
+        buttonBar.getButtons().add(balanceLabel);
 
         //setting timer
         timer.setText(time.getCurrentTime());
