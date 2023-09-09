@@ -74,7 +74,7 @@ public class SudokuGridController {
         livesText = new Label("Lives : " + lives);
         buttonBar.getButtons().add(livesText);
 
-        balanceLabel = new Label("Balance: " + lives);
+        balanceLabel = new Label("Balance: " + grid.getCoinSystem());
         buttonBar.getButtons().add(balanceLabel);
 
         //setting timer

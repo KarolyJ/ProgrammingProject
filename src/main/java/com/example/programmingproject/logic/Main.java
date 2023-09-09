@@ -23,22 +23,17 @@ public class Main {
             System.out.println("Not enough coins!");
         }
 
-        // Serialize and save the game
-        try {
-            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("savedGame.ser"));
-            out.writeObject(game);
-            out.close();
+        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("savedBalance.ser"))) {
+            outputStream.writeObject(game.getCoinSystem());
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        // Load the game
-        try {
-            ObjectInputStream in = new ObjectInputStream(new FileInputStream("savedGame.ser"));
-            Grid loadedGame = (Grid) in.readObject();
-            in.close();
-
-            // Access coin balance in loadedGame.getCoinSystem().getBalance();
+        // Loading
+        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("savedBalance.ser"))) {
+            Coin loadedCoinData = (Coin) inputStream.readObject();
+            int loadedBalance = loadedCoinData.getBalance();
+            System.out.println("Loaded balance: " + loadedBalance);
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
