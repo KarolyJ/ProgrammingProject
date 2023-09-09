@@ -13,10 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -144,6 +141,16 @@ public class SudokuGridController {
                     }
                 });
 
+                //Allow only one letter to be typed
+                tile.setTextFormatter(new TextFormatter<String>((TextFormatter.Change change) -> {
+                    String newText = change.getControlNewText();
+                    if (newText.length() > 1) {
+                        return null ;
+                    } else {
+                        return change ;
+                    }
+                }));
+
                 //had to change i, j to j, i
                 drawNumbers(tile, j, i);
 
@@ -213,6 +220,7 @@ public class SudokuGridController {
 
         return event -> {
 //                 to test inputs
+            TextField eventSource = (TextField) event.getSource();
             if(keyCodeArrayList.contains(event.getCode())) {
 
                 if (countCorrectGuesses + 1 == hiddenNumbers) {
@@ -230,7 +238,7 @@ public class SudokuGridController {
                         //increase count if it reaches the numbers of hiddenNumbers the game is won
                         countCorrectGuesses++;
                         //set the text field/input a permanent part of the game if the answer is correct
-                        TextField eventSource = (TextField) event.getSource();
+//                        TextField eventSource = (TextField) event.getSource();
                         eventSource.setText(event.getCode().getChar());
                         eventSource.setEditable(false);
                     } else {
