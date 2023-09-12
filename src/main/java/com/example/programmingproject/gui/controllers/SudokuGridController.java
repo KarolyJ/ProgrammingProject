@@ -304,17 +304,20 @@ public class SudokuGridController {
     }
 
 
+    //purchase a life only if the balance is positive
     public void addLife(MouseEvent mouseEvent) {
         if(Integer.parseInt(balance) > 0) {
-            balance = String.valueOf(Integer.parseInt(balance) - 20);
-            try {
-                Files.writeString(Paths.get("balance.txt"), balance);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+            if ((Integer.parseInt(balance) - 20) > 0) {
+                balance = String.valueOf(Integer.parseInt(balance) - 20);
+                try {
+                    Files.writeString(Paths.get("balance.txt"), balance);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                balanceLabel.setText("Balance:" + balance);
+                lives++;
+                livesText.setText("Lives : " + lives);
             }
-            balanceLabel.setText("Balance:" + balance);
-            lives++;
-            livesText.setText("Lives : " + lives);
         }
     }
 }
