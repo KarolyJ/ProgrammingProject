@@ -12,7 +12,7 @@
    <top>
       <ButtonBar fx:id="buttonBar" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <buttons>
-          <Button fx:id="backButton" mnemonicParsing="false" onMouseClicked="#switchToMenu" text="Back" />
+          <Button fx:id="backButton" mnemonicParsing="false" onMouseClicked="#switchToMenu" text="Back" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;"/>
         </buttons>
       </ButtonBar>
    </top>
