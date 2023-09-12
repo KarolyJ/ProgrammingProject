@@ -6,11 +6,11 @@ public class Coin implements Serializable {
     private int balance;
 
     public Coin() {
-        balance = 100;
     }
 
     public void earnCoins(int amount) {
         balance += amount;
+
     }
 
     public boolean spendCoins(int amount) {
@@ -24,4 +24,6 @@ public class Coin implements Serializable {
     public int getBalance() {
         return balance;
     }
+
+
 }

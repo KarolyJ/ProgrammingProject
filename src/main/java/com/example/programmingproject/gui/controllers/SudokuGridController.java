@@ -27,8 +27,14 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class SudokuGridController {
     public Button backButton;
@@ -67,30 +73,36 @@ public class SudokuGridController {
 
     private int countCorrectGuesses = 0;
 
+    private String balance;
+
+
+
     //TODO implement a timer
     //TODO test the grid, if the shown numbers correspond to the puzzle array
 
     //initialize to load these after the scene is loaded
     public void initialize() {
+
         livesText = new Label("Lives : " + lives);
         livesText.setStyle("-fx-border-color: black;" +
                 "-fx-border-radius: 20; " +
                 "-fx-alignment: center; " +
                 "-fx-font-weight: bold;");
-        buttonBar.getButtons().add(livesText);
 
-        balanceLabel = new Label("Balance: ");
-        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("savedBalance.ser"))) {
-            outputStream.writeObject(grid.getCoinSystem());
+        //we read the balance stored in a txt file
+        try {
+            balance = new String(Files.readAllBytes(Paths.get("balance.txt")));
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
-        balanceLabel.setText("Balance: " + grid.getBalanceSystem());
+        balanceLabel = new Label("Balance: " + balance);
         balanceLabel.setStyle("-fx-border-color: black;" +
                         "-fx-border-radius: 20; " +
                         "-fx-alignment: center; " +
                         "-fx-font-weight: bold;");
-        buttonBar.getButtons().add(balanceLabel);
+
+
+        buttonBar.getButtons().addAll(livesText, balanceLabel);
 
         //setting timer
         timer.setText(time.getCurrentTime());
@@ -239,7 +251,6 @@ public class SudokuGridController {
 
         return event -> {
 //                 to test inputs
-            TextField eventSource = (TextField) event.getSource();
             if(keyCodeArrayList.contains(event.getCode())) {
 
                 if (countCorrectGuesses + 1 == hiddenNumbers) {
@@ -254,12 +265,24 @@ public class SudokuGridController {
                 } else {
                     if (event.getCode().getChar().equals(event.getTarget().toString())) {
                         System.out.println("Correct");
+
                         //increase count if it reaches the numbers of hiddenNumbers the game is won
                         countCorrectGuesses++;
+
                         //set the text field/input a permanent part of the game if the answer is correct
-//                        TextField eventSource = (TextField) event.getSource();
+                        TextField eventSource = (TextField) event.getSource();
                         eventSource.setText(event.getCode().getChar());
                         eventSource.setEditable(false);
+
+                        //increase balance by 5 for every good guess
+                        balance = String.valueOf(Integer.parseInt(balance)+5);
+                        try {
+                            Files.writeString(Paths.get("balance.txt"), balance);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                        balanceLabel.setText("Balance:" + balance);
+
                     } else {
                         //if the game is lost, change to another window
                         if (lives < 2) {
@@ -279,4 +302,5 @@ public class SudokuGridController {
             }
         };
     }
+
 }
