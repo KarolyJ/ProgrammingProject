@@ -9,7 +9,7 @@
    <top>
       <ButtonBar fx:id="buttonBar" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <buttons>
-            <Button mnemonicParsing="false" text="Add lives" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;"/>
+            <Button mnemonicParsing="false" text="Add lives" onMouseClicked="#addLife" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;"/>
             <Button fx:id="backButton" mnemonicParsing="false" onMouseClicked="#switchToMenu" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" text="Back" />
         </buttons>
       </ButtonBar>
