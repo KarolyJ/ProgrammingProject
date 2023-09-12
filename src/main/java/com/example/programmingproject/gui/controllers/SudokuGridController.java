@@ -73,6 +73,10 @@ public class SudokuGridController {
     //initialize to load these after the scene is loaded
     public void initialize() {
         livesText = new Label("Lives : " + lives);
+        livesText.setStyle("-fx-border-color: black;" +
+                "-fx-border-radius: 20; " +
+                "-fx-alignment: center; " +
+                "-fx-font-weight: bold;");
         buttonBar.getButtons().add(livesText);
 
         balanceLabel = new Label("Balance: ");
@@ -82,6 +86,10 @@ public class SudokuGridController {
             e.printStackTrace();
         }
         balanceLabel.setText("Balance: " + grid.getBalanceSystem());
+        balanceLabel.setStyle("-fx-border-color: black;" +
+                        "-fx-border-radius: 20; " +
+                        "-fx-alignment: center; " +
+                        "-fx-font-weight: bold;");
         buttonBar.getButtons().add(balanceLabel);
 
         //setting timer
