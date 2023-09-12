@@ -28,6 +28,8 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        int earnedAmount = 50; // Adjust the amount as needed
+        game.getCoinSystem().earnCoins(earnedAmount);
 
         // Loading
         try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("savedBalance.ser"))) {
@@ -39,5 +41,16 @@ public class Main {
         }
 
         System.out.println("Saved file location: " + new File("savedGame.ser").getAbsolutePath());
+
+        Coin coinData = new Coin();
+
+        // Simulate earning and saving coins
+        CoinManager.earnMoreCoins(coinData, 50);
+        CoinManager.saveCoinData(coinData, "savedBalance.ser");
+
+        // Loading
+        Coin loadedCoinData = CoinManager.loadCoinData("savedBalance.ser");
+        int loadedBalance = loadedCoinData.getBalance();
+        System.out.println("Loaded balance: " + loadedBalance);
     }
 }
