@@ -1,9 +1,6 @@
 package com.example.programmingproject.logic;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.Serializable;
+import java.io.*;
 
 public class Coin implements Serializable {
     private int balance;
@@ -25,18 +22,6 @@ public class Coin implements Serializable {
     }
 
     public int getBalance() {
-        return balance;
-    }
-
-    public int getBalanceSystem(){
-        int balance = 0;
-        // Loading
-        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("savedBalance.ser"))) {
-            Coin loadedCoinData = (Coin) inputStream.readObject();
-            balance = loadedCoinData.getBalance();
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
         return balance;
     }
 }
