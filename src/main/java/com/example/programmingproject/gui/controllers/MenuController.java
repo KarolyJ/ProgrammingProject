@@ -51,6 +51,13 @@ public class MenuController
         stage.setTitle("The Fancy Sudoku!");
     }
 
+    public void switchToRanking(MouseEvent event) throws IOException {
+        final Stage stage = (Stage) this.ranking.getScene().getWindow();
+        final Parent root = FXMLLoader.load(Objects.requireNonNull(HelloApplication.class.getResource("records.fxml")));
+        stage.setScene(new Scene(root));
+        stage.setTitle("The Fancy Sudoku!");
+    }
+
     public void switchToMenuBack(MouseEvent event) throws IOException {
         final Stage stage = (Stage)this.back.getScene().getWindow();
         final Parent root = FXMLLoader.load(Objects.requireNonNull(HelloApplication.class.getResource("menu.fxml")));

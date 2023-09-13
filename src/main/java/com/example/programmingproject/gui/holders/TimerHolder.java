@@ -1,10 +1,13 @@
-package com.example.programmingproject.gui;
+package com.example.programmingproject.gui.holders;
 
 import com.example.programmingproject.logic.Time;
 
 public final class TimerHolder {
 
-    private String time;
+    //we created a singleton class to store time
+
+
+    private Time time;
 
     private final static TimerHolder INSTANCE = new TimerHolder();
 
@@ -14,11 +17,11 @@ public final class TimerHolder {
         return INSTANCE;
     }
 
-    public void setTime(String time) {
+    public void setTime(Time time) {
         this.time = time;
     }
 
-    public String getTime() {
+    public Time getTime() {
         return time;
     }
 }

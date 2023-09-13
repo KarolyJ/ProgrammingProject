@@ -11,8 +11,8 @@
             <Font name="System Bold" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="backButton" layoutX="256.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#switchToMenu" text="Back to menu" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;"/>
-      <Label fx:id="timeLabel" layoutX="215.0" layoutY="156.0" prefHeight="26.0" prefWidth="176.0" textAlignment="CENTER" style="-fx-border-color: black; -fx-border-radius: 20; -fx-alignment: center; -fx-font-weight: bold;">
+      <Button fx:id="backButton" layoutX="256.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#switchToMenu" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" text="Back to menu" />
+      <Label fx:id="timeLabel" layoutX="74.0" layoutY="156.0" prefHeight="26.0" prefWidth="485.0" style="-fx-border-color: black; -fx-border-radius: 20; -fx-alignment: center; -fx-font-weight: bold;" textAlignment="CENTER">
          <font>
             <Font size="15.0" />
          </font></Label>

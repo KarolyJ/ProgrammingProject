@@ -18,7 +18,7 @@
                   <Font size="21.0" />
                </font>
             </Button>
-            <Button fx:id="ranking" layoutX="231.0" layoutY="272.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="150.0" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" text="Ranking List">
+            <Button fx:id="ranking" layoutX="231.0" layoutY="272.0" mnemonicParsing="false" onMouseClicked="#switchToRanking" prefHeight="46.0" prefWidth="150.0" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" text="Ranking List">
                <font>
                   <Font size="20.0" />
                </font>

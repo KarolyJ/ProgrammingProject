@@ -3,7 +3,8 @@ package com.example.programmingproject.gui.controllers;
 import com.example.programmingproject.gui.*;
 import com.example.programmingproject.gui.exceptions.LostGameException;
 import com.example.programmingproject.gui.exceptions.WonGameException;
-import com.example.programmingproject.logic.Coin;
+import com.example.programmingproject.gui.holders.DifficultyHolder;
+import com.example.programmingproject.gui.holders.TimerHolder;
 import com.example.programmingproject.logic.Grid;
 import com.example.programmingproject.logic.Time;
 import javafx.animation.KeyFrame;
@@ -27,14 +28,10 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Scanner;
 
 public class SudokuGridController {
     public Button backButton;
@@ -77,7 +74,7 @@ public class SudokuGridController {
 
 
 
-    //TODO implement a timer
+    //TODO make wrong fields change colour
     //TODO test the grid, if the shown numbers correspond to the puzzle array
 
     //initialize to load these after the scene is loaded
@@ -257,7 +254,7 @@ public class SudokuGridController {
                     try {
                         //if game is won, then change to another window, passing down the current stage
                         TimerHolder holder = TimerHolder.getInstance();
-                        holder.setTime(time.getCurrentTime());
+                        holder.setTime(new Time(time.getCurrentTime()));
                         throw new WonGameException("YOU WON", (Stage) backButton.getScene().getWindow());
                     } catch (IOException | WonGameException e) {
                         System.out.println(e.getMessage());

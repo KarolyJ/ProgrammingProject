@@ -1,4 +1,4 @@
-package com.example.programmingproject.gui;
+package com.example.programmingproject.gui.holders;
 
 public final class DifficultyHolder {
 

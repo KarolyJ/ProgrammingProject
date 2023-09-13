@@ -1,6 +1,6 @@
 package com.example.programmingproject.gui.controllers;
 
-import com.example.programmingproject.gui.DifficultyHolder;
+import com.example.programmingproject.gui.holders.DifficultyHolder;
 import com.example.programmingproject.gui.HelloApplication;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
