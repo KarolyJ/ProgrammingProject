@@ -11,9 +11,9 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button fx:id="easyGameButton" layoutX="266.0" layoutY="130.0" mnemonicParsing="false" onMouseClicked="#switchToEasyGame" prefHeight="35.0" prefWidth="68.0" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" text="Easy" />
-      <Button fx:id="mediumGameButton" layoutX="251.0" layoutY="189.0" mnemonicParsing="false" onMouseClicked="#switchToMediumGame" prefHeight="35.0" prefWidth="99.0" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" text="Medium" />
-      <Button fx:id="hardGameButton" layoutX="263.0" layoutY="244.0" mnemonicParsing="false" onMouseClicked="#switchToHardGame" prefHeight="35.0" prefWidth="76.0" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" text="Hard" />
+      <Button fx:id="easyGameButton" layoutX="257.0" layoutY="158.0" mnemonicParsing="false" onMouseClicked="#switchToEasyGame" prefHeight="41.0" prefWidth="87.0" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" text="Easy" />
+      <Button fx:id="mediumGameButton" layoutX="240.0" layoutY="227.0" mnemonicParsing="false" onMouseClicked="#switchToMediumGame" prefHeight="41.0" prefWidth="120.0" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" text="Medium" />
+      <Button fx:id="hardGameButton" layoutX="257.0" layoutY="298.0" mnemonicParsing="false" onMouseClicked="#switchToHardGame" prefHeight="41.0" prefWidth="87.0" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" text="Hard" />
       <Button fx:id="backButton" layoutX="500.0" layoutY="43.0" mnemonicParsing="false" onMouseClicked="#switchToMenu" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" text="Back" />
    </children>
 </AnchorPane>
