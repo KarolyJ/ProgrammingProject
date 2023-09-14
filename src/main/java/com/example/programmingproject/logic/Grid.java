@@ -19,6 +19,10 @@ public class Grid implements Serializable {
         base = sudoku.mat;
         coinSystem = new Coin();
     }
+
+    private final int MIN_LEVEL = 20; // the amount of hidden numbers
+    private final int MID_LEVEL = 30;
+    private final int MAX_LEVEL = 40;
     private int levelOfTheGame; //the level of difficulty
 
     public int getLevelOfTheGame() {
@@ -47,7 +51,6 @@ public class Grid implements Serializable {
         try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("savedBalance.ser"))) {
             Coin loadedCoinData = (Coin) inputStream.readObject();
             balance = loadedCoinData.getBalance();
-            System.out.println(balance);
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
