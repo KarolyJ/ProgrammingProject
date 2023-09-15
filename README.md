@@ -12,9 +12,10 @@ Created by `Karoly Jonas`, `Guliaeva Anastasiia` and `Loboda Liliia`.
 
 ### Navigation
 
- * To start a game, one have to press a *'New Game'* button and then choose between three levels: easy, medium and hard. The timer starts the time one opened a window of the game. There is also a coin system that gives you opportunity to buy a hint and freeze the timer for 10 seconds. 
-
-* In *settings* you can change a mode into **dark** or **light** one. 
+ * To start a game, one have to press a *'New Game'* button and then choose between three levels: easy, medium and hard. The timer starts the time one opened a window of the game. There is also a coin system that gives you opportunity to buy a life.
+ * In *Ranking List* you can check your best time in which you solved the difficulties.
+ 
+* In *settings* you can change a mode into **dark** or **light** one.
 * In the last section there are the *rules* of the game. 
 
 ### We used the following programming techniques: 
