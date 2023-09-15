@@ -76,7 +76,7 @@ public class GameWonController {
 
 
     //returns the better time from the two inputs
-    private static Time compareTimes(Time oldTime, Time newTime) {
+    public static Time compareTimes(Time oldTime, Time newTime) {
         if (!(oldTime.equals(new Time(0, 0, 0)))) {
             if (oldTime.getHour() == newTime.getHour()) {
                 if (oldTime.getMinute() > newTime.getMinute()) {
