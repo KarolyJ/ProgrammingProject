@@ -6,9 +6,9 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programmingproject.gui.controllers.RecordsController">
    <children>
-      <Label fx:id="easyLabel" layoutX="132.0" layoutY="106.0" prefHeight="34.0" prefWidth="82.0" style="-fx-border-color: black; -fx-border-radius: 20; -fx-alignment: center; -fx-font-weight: bold;" text="Easy : " />
-      <Label fx:id="mediumLabel" layoutX="132.0" layoutY="158.0" prefHeight="34.0" prefWidth="94.0" style="-fx-border-color: black; -fx-border-radius: 20; -fx-alignment: center; -fx-font-weight: bold;" text="Medium : " />
-      <Label fx:id="hardLabel" layoutX="132.0" layoutY="214.0" prefHeight="34.0" prefWidth="82.0" style="-fx-border-color: black; -fx-border-radius: 20; -fx-alignment: center; -fx-font-weight: bold;" text="Hard : " />
+      <Label fx:id="easyLabel" layoutX="132.0" layoutY="106.0" prefHeight="34.0" prefWidth="233.0" style="-fx-border-color: black; -fx-border-radius: 20; -fx-alignment: center; -fx-font-weight: bold;" text="Easy : " />
+      <Label fx:id="mediumLabel" layoutX="132.0" layoutY="158.0" prefHeight="34.0" prefWidth="234.0" style="-fx-border-color: black; -fx-border-radius: 20; -fx-alignment: center; -fx-font-weight: bold;" text="Medium : " />
+      <Label fx:id="hardLabel" layoutX="132.0" layoutY="214.0" prefHeight="34.0" prefWidth="234.0" style="-fx-border-color: black; -fx-border-radius: 20; -fx-alignment: center; -fx-font-weight: bold;" text="Hard : " />
       <Button fx:id="backButton" mnemonicParsing="false" onMouseClicked="#switchToMenu" prefHeight="34.0" prefWidth="63.0" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" text="Back" />
    </children>
 </AnchorPane>
