@@ -248,6 +248,7 @@ public class SudokuGridController {
 
         return event -> {
 //                 to test inputs
+            TextField eventSource = (TextField) event.getSource();
             if(keyCodeArrayList.contains(event.getCode())) {
 
                 if (countCorrectGuesses + 1 == hiddenNumbers) {
@@ -261,15 +262,15 @@ public class SudokuGridController {
                     }
                 } else {
                     if (event.getCode().getChar().equals(event.getTarget().toString())) {
-                        System.out.println("Correct");
 
                         //increase count if it reaches the numbers of hiddenNumbers the game is won
                         countCorrectGuesses++;
 
                         //set the text field/input a permanent part of the game if the answer is correct
-                        TextField eventSource = (TextField) event.getSource();
                         eventSource.setText(event.getCode().getChar());
+                        eventSource.setStyle(null);
                         eventSource.setEditable(false);
+
 
                         //increase balance by 5 for every good guess
                         balance = String.valueOf(Integer.parseInt(balance)+5);
@@ -293,7 +294,8 @@ public class SudokuGridController {
                         //lose a life if the input is wrong
                         lives--;
                         livesText.setText("Lives : " + lives);
-                        System.out.println("Wrong");
+                        eventSource.setStyle("-fx-control-inner-background: #e0827b");
+
                     }
                 }
             }
