@@ -15,6 +15,7 @@ import java.io.IOException;
 
 
 public class NewGameController {
+
     public Button backButton;
     public Button easyGameButton;
     public Button mediumGameButton;
