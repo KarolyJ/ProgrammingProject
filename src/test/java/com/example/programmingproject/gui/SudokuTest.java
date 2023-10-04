@@ -1,6 +1,5 @@
 package com.example.programmingproject.gui;
 
-import com.example.programmingproject.logic.Grid;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

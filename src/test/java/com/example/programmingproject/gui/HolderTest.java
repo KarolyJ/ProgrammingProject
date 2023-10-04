@@ -2,7 +2,7 @@ package com.example.programmingproject.gui;
 
 import com.example.programmingproject.gui.holders.DifficultyHolder;
 import com.example.programmingproject.gui.holders.TimerHolder;
-import com.example.programmingproject.logic.Time;
+import com.example.programmingproject.objects.Time;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

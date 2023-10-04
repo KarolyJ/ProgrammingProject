@@ -1,6 +1,6 @@
 package com.example.programmingproject.gui.controllers;
 
-import com.example.programmingproject.logic.Time;
+import com.example.programmingproject.objects.Time;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.Initializable;

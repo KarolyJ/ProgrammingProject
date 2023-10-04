@@ -6,7 +6,7 @@ package com.example.programmingproject.gui.controllers;
 import java.io.IOException;
 import java.util.Objects;
 
-import com.example.programmingproject.gui.HelloApplication;
+import com.example.programmingproject.gui.MainApplication;
 import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -33,34 +33,34 @@ public class MenuController
     @FXML
     public void switchToGame(MouseEvent event) throws IOException {
         final Stage stage = (Stage)this.newGame.getScene().getWindow();
-        final Parent root = FXMLLoader.load(Objects.requireNonNull(HelloApplication.class.getResource("newgame.fxml")));
+        final Parent root = FXMLLoader.load(Objects.requireNonNull(MainApplication.class.getResource("newgame.fxml")));
         stage.setScene(new Scene(root));
         stage.setTitle("The Fancy Sudoku!");
     }
 
     public void switchToSettings(MouseEvent event) throws IOException{
         final Stage stage = (Stage)this.settings.getScene().getWindow();
-        final Parent root = FXMLLoader.load(Objects.requireNonNull(HelloApplication.class.getResource("settings.fxml")));
+        final Parent root = FXMLLoader.load(Objects.requireNonNull(MainApplication.class.getResource("settings.fxml")));
         stage.setScene(new Scene(root));
         stage.setTitle("The Fancy Sudoku!");
     }
     public void switchToRules(MouseEvent event) throws IOException{
         final Stage stage = (Stage)this.rules.getScene().getWindow();
-        final Parent root = FXMLLoader.load(Objects.requireNonNull(HelloApplication.class.getResource("rules.fxml")));
+        final Parent root = FXMLLoader.load(Objects.requireNonNull(MainApplication.class.getResource("rules.fxml")));
         stage.setScene(new Scene(root));
         stage.setTitle("The Fancy Sudoku!");
     }
 
     public void switchToRanking(MouseEvent event) throws IOException {
         final Stage stage = (Stage) this.ranking.getScene().getWindow();
-        final Parent root = FXMLLoader.load(Objects.requireNonNull(HelloApplication.class.getResource("records.fxml")));
+        final Parent root = FXMLLoader.load(Objects.requireNonNull(MainApplication.class.getResource("records.fxml")));
         stage.setScene(new Scene(root));
         stage.setTitle("The Fancy Sudoku!");
     }
 
     public void switchToMenuBack(MouseEvent event) throws IOException {
         final Stage stage = (Stage)this.back.getScene().getWindow();
-        final Parent root = FXMLLoader.load(Objects.requireNonNull(HelloApplication.class.getResource("menu.fxml")));
+        final Parent root = FXMLLoader.load(Objects.requireNonNull(MainApplication.class.getResource("menu.fxml")));
         stage.setScene(new Scene(root));
         stage.setTitle("The Fancy Sudoku!");
     }

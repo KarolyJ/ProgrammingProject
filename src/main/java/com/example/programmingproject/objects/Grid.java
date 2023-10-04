@@ -1,15 +1,11 @@
-package com.example.programmingproject.logic;
+package com.example.programmingproject.objects;
 //This suggests that the minimum number of clues to provide in a grid is 17.
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.Arrays;
 
 public class Grid implements Serializable {
     private final int[][] base;
-    private Coin coinSystem;
     SudokuGenerator sudoku = new SudokuGenerator(9);
 
     private int[][] readySudoku;
@@ -17,7 +13,6 @@ public class Grid implements Serializable {
     public Grid() {
         sudoku.fillValues();
         base = sudoku.mat;
-        coinSystem = new Coin();
     }
     private int levelOfTheGame; //the level of difficulty
 
@@ -38,21 +33,6 @@ public class Grid implements Serializable {
         return readySudoku;
     }
 
-    public Coin getCoinSystem() {
-        return coinSystem;
-    }
-    public int getBalanceSystem() {
-        int balance = 0;
-        // Loading
-        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("savedBalance.ser"))) {
-            Coin loadedCoinData = (Coin) inputStream.readObject();
-            balance = loadedCoinData.getBalance();
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return balance;
-    }
-
     public  void setReadySudoku(){
         // Create a deep copy of the base array for readySudoku
         readySudoku = new int[base.length][base[0].length];
@@ -61,20 +41,6 @@ public class Grid implements Serializable {
         }
 
         this.hideSudoku();
-    }
-
-    public boolean checkTheAnswers(){
-        if (base.length != readySudoku.length || base[0].length != readySudoku[0].length)
-            return false;
-
-        for (int i = 0; i < base.length; i++) {
-            for (int j = 0; j < base[0].length; j++) {
-                if (base[i][j] != readySudoku[i][j])
-                    return false;
-            }
-        }
-
-        return true;
     }
 
     public void printSudoku(){
@@ -96,7 +62,6 @@ public class Grid implements Serializable {
         {
             int cellId = randomGenerator()-1;
 
-            // System.out.println(cellId);
             // extract coordinates i  and j
             int i = (cellId/9);
             int j = cellId%9;
@@ -109,14 +74,6 @@ public class Grid implements Serializable {
                 count--;
                 readySudoku[i][j] = 0;
             }
-        }
-    }
-    public void printHiddenSudoku(){
-        for (int[] ints : getReadySudoku()) {
-            for (int anInt : ints) {
-                System.out.print(anInt + " ");
-            }
-            System.out.println();
         }
     }
 }

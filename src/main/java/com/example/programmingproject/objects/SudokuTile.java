@@ -1,4 +1,4 @@
-package com.example.programmingproject.gui;
+package com.example.programmingproject.objects;
 
 import javafx.scene.control.TextField;
 

@@ -1,10 +1,10 @@
 package com.example.programmingproject.gui.controllers;
 
 import com.example.programmingproject.gui.holders.DifficultyHolder;
-import com.example.programmingproject.gui.HelloApplication;
+import com.example.programmingproject.gui.MainApplication;
 import com.example.programmingproject.gui.holders.TimerHolder;
-import com.example.programmingproject.logic.Record;
-import com.example.programmingproject.logic.Time;
+import com.example.programmingproject.objects.Record;
+import com.example.programmingproject.objects.Time;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,7 +24,7 @@ public class GameWonController {
     public Button backButton;
     public Label timeLabel;
 
-    private static File recordsFile = new File("records.json");
+    private static File recordsFile = new File("src/main/resources/records.json");
 
     public void initialize() throws IOException {
         ObjectMapper mapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
@@ -57,7 +57,7 @@ public class GameWonController {
     @FXML
     public void switchToMenu(final MouseEvent event) throws IOException {
         final Stage stage = (Stage) this.backButton.getScene().getWindow();
-        final Parent root = (Parent) FXMLLoader.load(HelloApplication.class.getResource("menu.fxml"));
+        final Parent root = (Parent) FXMLLoader.load(MainApplication.class.getResource("menu.fxml"));
         stage.setScene(new Scene(root));
         stage.setTitle("The Fancy Sudoku!");
     }

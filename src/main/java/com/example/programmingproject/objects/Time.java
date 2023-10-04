@@ -1,4 +1,4 @@
-package com.example.programmingproject.logic;
+package com.example.programmingproject.objects;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

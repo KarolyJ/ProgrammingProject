@@ -1,6 +1,6 @@
 package com.example.programmingproject.gui.holders;
 
-import com.example.programmingproject.logic.Time;
+import com.example.programmingproject.objects.Time;
 
 public final class TimerHolder {
 

@@ -1,7 +1,7 @@
 package com.example.programmingproject.gui.controllers;
 
 import com.example.programmingproject.gui.holders.DifficultyHolder;
-import com.example.programmingproject.gui.HelloApplication;
+import com.example.programmingproject.gui.MainApplication;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -24,7 +24,7 @@ public class NewGameController {
     @FXML
     public void switchToMenu(final MouseEvent event) throws IOException {
         final Stage stage = (Stage) this.backButton.getScene().getWindow();
-        final Parent root = (Parent) FXMLLoader.load(HelloApplication.class.getResource("menu.fxml"));
+        final Parent root = (Parent) FXMLLoader.load(MainApplication.class.getResource("menu.fxml"));
         stage.setScene(new Scene(root));
         stage.setTitle("The Fancy Sudoku!");
     }
@@ -49,7 +49,7 @@ public class NewGameController {
         holder.setDifficulty(difficulty);
         Node node = (Node) event.getSource();
         final Stage stage = (Stage) node.getScene().getWindow();
-        final Parent root = (Parent) FXMLLoader.load(HelloApplication.class.getResource("sudoku-grid.fxml"));
+        final Parent root = (Parent) FXMLLoader.load(MainApplication.class.getResource("sudoku-grid.fxml"));
         stage.setScene(new Scene(root));
         stage.setTitle("The Fancy Sudoku!");
     }

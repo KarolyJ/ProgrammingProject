@@ -1,9 +1,8 @@
-package com.example.programmingproject.logic;
+package com.example.programmingproject.objects;
 //using the idea from https://www.geeksforgeeks.org/program-sudoku-generator/ this site.
-import java.io.Serializable;
 import java.lang.*;
 
-public class SudokuGenerator implements Serializable {
+public class SudokuGenerator {
     int[][] mat;
     int N; // number of columns/rows.
     int SRN; // square root of N

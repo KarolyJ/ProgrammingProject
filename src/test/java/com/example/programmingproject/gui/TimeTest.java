@@ -1,7 +1,6 @@
 package com.example.programmingproject.gui;
 
-import com.example.programmingproject.gui.controllers.GameWonController;
-import com.example.programmingproject.logic.Time;
+import com.example.programmingproject.objects.Time;
 import org.junit.Test;
 
 

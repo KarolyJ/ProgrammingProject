@@ -1,12 +1,11 @@
 package com.example.programmingproject.gui.controllers;
 
 import com.example.programmingproject.gui.*;
-import com.example.programmingproject.gui.exceptions.LostGameException;
-import com.example.programmingproject.gui.exceptions.WonGameException;
 import com.example.programmingproject.gui.holders.DifficultyHolder;
 import com.example.programmingproject.gui.holders.TimerHolder;
-import com.example.programmingproject.logic.Grid;
-import com.example.programmingproject.logic.Time;
+import com.example.programmingproject.objects.Grid;
+import com.example.programmingproject.objects.SudokuTile;
+import com.example.programmingproject.objects.Time;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.EventHandler;
@@ -31,7 +30,6 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class SudokuGridController {
     public Button backButton;
@@ -49,8 +47,6 @@ public class SudokuGridController {
                         timer.setText(time.getCurrentTime());
                     }));
 
-
-    private HashMap<Coordinates, SudokuTile> textFieldCoordinates = new HashMap<>();
 
     private final int BORDER_PADDING = 50;
 
@@ -73,10 +69,6 @@ public class SudokuGridController {
     private String balance;
 
 
-
-    //TODO make wrong fields change colour
-    //TODO test the grid, if the shown numbers correspond to the puzzle array
-
     //initialize to load these after the scene is loaded
     public void initialize() {
 
@@ -88,7 +80,7 @@ public class SudokuGridController {
 
         //we read the balance stored in a txt file
         try {
-            balance = new String(Files.readAllBytes(Paths.get("balance.txt")));
+            balance = new String(Files.readAllBytes(Paths.get("src/main/resources/balance.txt")));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -156,7 +148,7 @@ public class SudokuGridController {
                 int value = completePuzzle[j][i];
 
                 //the completed puzzle is saved as the value of the SudokuTile object, so the object contains solution
-                SudokuTile tile = new SudokuTile(i, j, value);
+                SudokuTile tile = new SudokuTile(j, i, value);
 
                 styleTile(tile, x, y);
 
@@ -181,8 +173,6 @@ public class SudokuGridController {
 
                 //had to change i, j to j, i
                 drawNumbers(tile, j, i);
-
-                textFieldCoordinates.put(new Coordinates(i, j), tile);
 
                 root.getChildren().add(tile);
             }
@@ -222,15 +212,10 @@ public class SudokuGridController {
     @FXML
     public void switchToMenu(final MouseEvent event) throws IOException {
         final Stage stage = (Stage) this.backButton.getScene().getWindow();
-        final Parent root = (Parent) FXMLLoader.load(HelloApplication.class.getResource("menu.fxml"));
+        final Parent root = (Parent) FXMLLoader.load(MainApplication.class.getResource("menu.fxml"));
         stage.setScene(new Scene(root));
         stage.setTitle("The Fancy Sudoku!");
     }
-
-    public int[][] getOutputPuzzle() {
-        return outputPuzzle;
-    }
-
     private EventHandler<KeyEvent> checkInput() {
 
         //creating an array with the allowed keycodes, so we can control the input
@@ -252,14 +237,17 @@ public class SudokuGridController {
             if(keyCodeArrayList.contains(event.getCode())) {
 
                 if (countCorrectGuesses + 1 == hiddenNumbers) {
+                    TimerHolder holder = TimerHolder.getInstance();
+                    holder.setTime(new Time(time.getCurrentTime()));
+                    final Stage stage = (Stage) this.backButton.getScene().getWindow();
+                    final Parent root;
                     try {
-                        //if game is won, then change to another window, passing down the current stage
-                        TimerHolder holder = TimerHolder.getInstance();
-                        holder.setTime(new Time(time.getCurrentTime()));
-                        throw new WonGameException("YOU WON", (Stage) backButton.getScene().getWindow());
-                    } catch (IOException | WonGameException e) {
-                        System.out.println(e.getMessage());
+                        root = (Parent) FXMLLoader.load(MainApplication.class.getResource("gamewon.fxml"));
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
                     }
+                    stage.setScene(new Scene(root));
+                    stage.setTitle("The Fancy Sudoku!");
                 } else {
                     if (event.getCode().getChar().equals(event.getTarget().toString())) {
 
@@ -284,12 +272,15 @@ public class SudokuGridController {
                     } else {
                         //if the game is lost, change to another window
                         if (lives < 2) {
+                            final Stage stage = (Stage) this.backButton.getScene().getWindow();
+                            final Parent root;
                             try {
-                                throw new LostGameException("GAME OVER",
-                                        (Stage) backButton.getScene().getWindow());
-                            } catch (LostGameException | IOException e) {
-                                System.out.println(e.getMessage());
+                                root = (Parent) FXMLLoader.load(MainApplication.class.getResource("gameover.fxml"));
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
                             }
+                            stage.setScene(new Scene(root));
+                            stage.setTitle("The Fancy Sudoku!");
                         }
                         //lose a life if the input is wrong
                         lives--;
