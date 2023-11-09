@@ -32,6 +32,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class SudokuGridController {
+
     public Button backButton;
     public Pane sudoku_pane;
     public Label livesText;
