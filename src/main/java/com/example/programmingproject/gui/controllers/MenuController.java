@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 import com.example.programmingproject.gui.MainApplication;
+import javafx.event.ActionEvent;
 import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -29,6 +30,8 @@ public class MenuController
     private Button rules;
     @FXML
     private Button back;
+
+    private boolean isLightMode = true; // changing mode
 
     @FXML
     public void switchToGame(MouseEvent event) throws IOException {
@@ -64,4 +67,21 @@ public class MenuController
         stage.setScene(new Scene(root));
         stage.setTitle("The Fancy Sudoku!");
     }
+
+
+    //changing modes methods
+    /*
+    public void changeMode(ActionEvent event){
+        isLightMode = !isLightMode;
+        if(isLightMode){
+            setLightMode();
+        }else{
+            setDarkMode();
+        }
+    }
+
+    private void setLightMode(){
+    }
+    private void setDarkMode(){}*/
+
 }
