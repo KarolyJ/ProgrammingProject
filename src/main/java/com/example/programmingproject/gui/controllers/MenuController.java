@@ -1,23 +1,21 @@
-
-
-
 package com.example.programmingproject.gui.controllers;
 
 import java.io.IOException;
 import java.util.Objects;
-
 import com.example.programmingproject.gui.MainApplication;
 import javafx.event.ActionEvent;
 import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.scene.input.MouseEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-public class MenuController
-{
+public class MenuController {
     //start scene buttons
     @FXML
     private Button newGame;
@@ -31,7 +29,12 @@ public class MenuController
     @FXML
     private Button back;
 
-    private boolean isLightMode = true; // changing mode
+    //changing mode objects
+    private Button btnLight;
+    private boolean isLightMode = true; // changing mode condition
+    private ImageView imageView;
+    private AnchorPane anchorPane;
+
 
     @FXML
     public void switchToGame(MouseEvent event) throws IOException {
@@ -70,7 +73,6 @@ public class MenuController
 
 
     //changing modes methods
-    /*
     public void changeMode(ActionEvent event){
         isLightMode = !isLightMode;
         if(isLightMode){
@@ -81,7 +83,16 @@ public class MenuController
     }
 
     private void setLightMode(){
+       anchorPane.getStylesheets().remove("styles/darkmode.css");
+       anchorPane.getStylesheets().add("styles/lightmode.css");
+       Image image = new Image("img/lightmode.png");
+       imageView.setImage(image);
     }
-    private void setDarkMode(){}*/
+    private void setDarkMode(){
+        anchorPane.getStylesheets().remove("styles/lightmode.css");
+        anchorPane.getStylesheets().add("styles/darkmode.css");
+        Image image = new Image("img/darkmode.png");
+        imageView.setImage(image);
+    }
 
 }

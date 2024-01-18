@@ -5,14 +5,13 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programmingproject.gui.controllers.MenuController">
    <children>
-      <AnchorPane layoutY="1.0" prefHeight="750.0" prefWidth="650.0">
+      <AnchorPane layoutY="1.0" prefHeight="750.0" prefWidth="650.0" styleClass="primary-color" stylesheets="@styles/lightmode.css">
          <children>
-            <Label layoutX="180.0" layoutY="39.0" style="-fx-text-fill: #000000; -fx-font-weight: bold;" text="The Fancy Sudoku" AnchorPane.topAnchor="39.0">
+            <Label layoutX="180.0" layoutY="39.0" style="-fx-text-fill: #000000;" text="The Fancy Sudoku" AnchorPane.topAnchor="39.0">
                <font>
                   <Font size="36.0" />
                </font>
@@ -22,12 +21,12 @@
                   <Font size="21.0" />
                </font>
             </Button>
-            <Button fx:id="ranking" layoutX="250.0" layoutY="278.0" mnemonicParsing="false" onMouseClicked="#switchToRanking" prefHeight="59.0" prefWidth="169.0" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" text="Ranking List">
+            <Button fx:id="ranking" layoutX="250.0" layoutY="278.0" mnemonicParsing="false" onMouseClicked="#switchToRanking" prefHeight="59.0" prefWidth="169.0" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10; -fx-font-weight: bold;" text="Ranking List">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="newGame" layoutX="250.0" layoutY="193.0" mnemonicParsing="false" onMouseClicked="#switchToGame" prefHeight="59.0" prefWidth="169.0" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" text="New Game">
+            <Button fx:id="newGame" layoutX="250.0" layoutY="193.0" mnemonicParsing="false" onMouseClicked="#switchToGame" prefHeight="59.0" prefWidth="169.0" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10; -fx-font-weight: bold;" text="New Game">
                <font>
                   <Font size="21.0" />
                </font>
@@ -37,14 +36,13 @@
                   <Font size="21.0" />
                </font>
             </Button>
-            <Label layoutX="312.0" layoutY="678.0" text="2023" />
-            <Button layoutX="46.0" layoutY="26.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="66.0" />
-            <ImageView fitHeight="66.0" fitWidth="66.0" layoutX="46.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+            <Label layoutX="312.0" layoutY="678.0" text="2024" />
+            <Button fx:id="btnLight" layoutX="52.0" layoutY="36.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" />
+            <ImageView fx:id="imageView" fitHeight="52.0" fitWidth="52.0" layoutX="52.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="C:\Users\39338\ProgrammingProject\src\main\resources\com\example\programmingproject\gui\lightmode.png" />
+                  <Image url="@img/lightmode.png" />
                </image>
             </ImageView>
-            <VBox prefHeight="137.0" prefWidth="650.0" />
          </children>
       </AnchorPane>
    </children>
