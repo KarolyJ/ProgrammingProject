@@ -1,0 +1,12 @@
+/*scene styling*/
+.primary-color{
+    -fx-background-color: #FFFFF;
+}
+.secondary-color {
+    -fx-background-color: #E7E7E7;
+}
+
+/*button styling*/
+.round-border{
+    -fx-background-radius: 100;
+}
