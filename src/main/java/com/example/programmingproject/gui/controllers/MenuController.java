@@ -1,5 +1,6 @@
 package com.example.programmingproject.gui.controllers;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -94,15 +95,15 @@ public class MenuController {
     }
 
     private void setLightMode(){
-        root.getStylesheets().remove("com/example/programmingproject/gui/styles/darkmode.css");
-        root.getStylesheets().add("com/example/programmingproject/gui/styles/lightmode.css");
-        Image image = new Image("com/example/programmingproject/gui/img/lightmode.png");
+        root.getStylesheets().remove(new File("C:\\Users\\39338\\ProgrammingProject\\src\\main\\resources\\com\\example\\programmingproject\\gui\\darkmode.css").toURI().toString());
+        root.getStylesheets().add(new File("C:\\Users\\39338\\ProgrammingProject\\src\\main\\resources\\com\\example\\programmingproject\\gui\\lightmode.css").toURI().toString());
+        Image image = new Image(new File("C:\\Users\\39338\\ProgrammingProject\\src\\main\\resources\\com\\example\\programmingproject\\gui\\lightmode.png").toURI().toString());
         imgMode.setImage(image);
     }
     private void setDarkMode(){
-        root.getStylesheets().remove("com/example/programmingproject/gui/styles/lightmode.css");
-        root.getStylesheets().add("com/example/programmingproject/gui/styles/darkmode.css");
-        Image image = new Image("com/example/programmingproject/gui/img/darkmode.png");
+        root.getStylesheets().remove(new File("C:\\Users\\39338\\ProgrammingProject\\src\\main\\resources\\com\\example\\programmingproject\\gui\\lightmode.css").toURI().toString());
+        root.getStylesheets().add(new File("C:\\Users\\39338\\ProgrammingProject\\src\\main\\resources\\com\\example\\programmingproject\\gui\\darkmode.css").toURI().toString());
+        Image image = new Image(new File("C:\\Users\\39338\\ProgrammingProject\\src\\main\\resources\\com\\example\\programmingproject\\gui\\darkmode.png").toURI().toString());
         imgMode.setImage(image);
     }
 }

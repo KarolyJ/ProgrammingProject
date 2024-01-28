@@ -3,30 +3,36 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="750.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programmingproject.gui.controllers.NewGameController">
+<AnchorPane prefHeight="680.0" prefWidth="650.0" styleClass="primary-color" stylesheets="@lightmode.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programmingproject.gui.controllers.NewGameController">
    <children>
-      <Label layoutX="207.0" layoutY="57.0" prefHeight="50.0" prefWidth="262.0" text="Select Difficulty">
-         <font>
-            <Font name="System Bold" size="34.0" />
-         </font>
-      </Label>
-      <Button fx:id="easyGameButton" layoutX="254.0" layoutY="224.0" mnemonicParsing="false" onMouseClicked="#switchToEasyGame" prefHeight="59.0" prefWidth="169.0" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" text="Easy">
+      <Button fx:id="easyGameButton" layoutX="254.0" layoutY="224.0" mnemonicParsing="false" onMouseClicked="#switchToEasyGame" prefHeight="59.0" prefWidth="169.0" styleClass="menu-button" stylesheets="@lightmode.css" text="Easy">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button fx:id="mediumGameButton" layoutX="254.0" layoutY="315.0" mnemonicParsing="false" onMouseClicked="#switchToMediumGame" prefHeight="59.0" prefWidth="169.0" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" text="Medium">
+      <Button fx:id="mediumGameButton" layoutX="254.0" layoutY="315.0" mnemonicParsing="false" onMouseClicked="#switchToMediumGame" prefHeight="59.0" prefWidth="169.0" styleClass="menu-button" stylesheets="@lightmode.css" text="Medium">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button fx:id="hardGameButton" layoutX="254.0" layoutY="406.0" mnemonicParsing="false" onMouseClicked="#switchToHardGame" prefHeight="59.0" prefWidth="169.0" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" text="Hard">
+      <Button fx:id="hardGameButton" layoutX="254.0" layoutY="406.0" mnemonicParsing="false" onMouseClicked="#switchToHardGame" prefHeight="59.0" prefWidth="169.0" styleClass="menu-button" stylesheets="@lightmode.css" text="Hard">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button fx:id="backButton" layoutX="33.0" layoutY="61.0" mnemonicParsing="false" onMouseClicked="#switchToMenu" prefHeight="42.0" prefWidth="72.0" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" text="Back">
-         <font>
-            <Font size="14.0" />
-         </font></Button>
+      <Pane prefHeight="148.0" prefWidth="650.0" styleClass="secondary-color" stylesheets="@lightmode.css">
+         <children>
+            <Label layoutX="205.0" layoutY="48.0" text="Select difficulty">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Button fx:id="backButton" layoutX="66.0" layoutY="62.0" mnemonicParsing="false" onAction="#switchToMenu" styleClass="back-button" stylesheets="@lightmode.css" text="Back">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

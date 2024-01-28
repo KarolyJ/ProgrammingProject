@@ -10,41 +10,41 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programmingproject.gui.controllers.MenuController">
    <children>
-      <AnchorPane fx:id="root" prefHeight="600.0" prefWidth="500.0" styleClass="primary-color" stylesheets="@styles/lightmode.css">
+      <AnchorPane fx:id="root" prefHeight="600.0" prefWidth="500.0" styleClass="primary-color" stylesheets="@lightmode.css">
          <children>
-            <Button fx:id="settings" layoutX="250.0" layoutY="363.0" mnemonicParsing="false" onMouseClicked="#switchToSettings" prefHeight="59.0" prefWidth="169.0" styleClass="menu-button" stylesheets="@styles/lightmode.css" text="Settings">
+            <Button fx:id="settings" layoutX="250.0" layoutY="363.0" mnemonicParsing="false" onMouseClicked="#switchToSettings" prefHeight="59.0" prefWidth="169.0" styleClass="menu-button" stylesheets="@lightmode.css" text="Settings">
                <font>
                   <Font size="21.0" />
                </font>
             </Button>
-            <Button fx:id="ranking" layoutX="250.0" layoutY="278.0" mnemonicParsing="false" onMouseClicked="#switchToRanking" prefHeight="59.0" prefWidth="169.0" styleClass="menu-button" stylesheets="@styles/lightmode.css" text="Ranking List">
+            <Button fx:id="ranking" layoutX="250.0" layoutY="278.0" mnemonicParsing="false" onMouseClicked="#switchToRanking" prefHeight="59.0" prefWidth="169.0" styleClass="menu-button" stylesheets="@lightmode.css" text="Ranking List">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="newGame" layoutX="250.0" layoutY="193.0" mnemonicParsing="false" onMouseClicked="#switchToGame" prefHeight="59.0" prefWidth="169.0" styleClass="menu-button" stylesheets="@styles/lightmode.css" text="New Game">
+            <Button fx:id="newGame" layoutX="250.0" layoutY="193.0" mnemonicParsing="false" onMouseClicked="#switchToGame" prefHeight="59.0" prefWidth="169.0" styleClass="menu-button" stylesheets="@lightmode.css" text="New Game">
                <font>
                   <Font size="21.0" />
                </font>
             </Button>
-            <Button fx:id="rules" layoutX="250.0" layoutY="453.0" mnemonicParsing="false" onMouseClicked="#switchToRules" prefHeight="59.0" prefWidth="169.0" styleClass="menu-button" stylesheets="@styles/lightmode.css" text="Rules">
+            <Button fx:id="rules" layoutX="250.0" layoutY="453.0" mnemonicParsing="false" onMouseClicked="#switchToRules" prefHeight="59.0" prefWidth="169.0" styleClass="menu-button" stylesheets="@lightmode.css" text="Rules">
                <font>
                   <Font size="21.0" />
                </font>
             </Button>
-            <Label layoutX="312.0" layoutY="664.0" text="2024" />
-            <Pane prefHeight="133.0" prefWidth="650.0" styleClass="secondary-color" stylesheets="@styles/lightmode.css">
+            <Label layoutX="312.0" layoutY="664.0" stylesheets="@lightmode.css" text="2024" />
+            <Pane prefHeight="133.0" prefWidth="650.0" styleClass="secondary-color" stylesheets="@lightmode.css">
                <children>
                   <Label fx:id="label" layoutX="181.0" layoutY="47.0" text="The Fancy Sudoku">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Label>
-                  <Button fx:id="btnMode" layoutX="48.0" layoutY="45.0" mnemonicParsing="false" onAction="#changeMode" prefHeight="50.0" prefWidth="50.0" styleClass="mode-button" stylesheets="@styles/lightmode.css">
+                  <Button fx:id="btnMode" layoutX="48.0" layoutY="45.0" mnemonicParsing="false" onAction="#changeMode" prefHeight="50.0" prefWidth="50.0" styleClass="mode-button" stylesheets="@lightmode.css">
                      <graphic>
                         <ImageView fx:id="imgMode" fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@img/lightmode.png" />
+                              <Image url="@lightmode.png" />
                            </image>
                         </ImageView>
                      </graphic>
