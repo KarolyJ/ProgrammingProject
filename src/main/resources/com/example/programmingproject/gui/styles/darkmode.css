@@ -2,11 +2,9 @@
     -fx-background-color: #383838;
 }
 
-.secondary-color{
-    -fx-background-color: #282828;
+.text-area {
+    -fx-text-fill: #ffffff;;
 }
-
-
 /*button styling*/
 .round-border{
     -fx-background-radius: 100;

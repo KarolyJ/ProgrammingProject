@@ -2,11 +2,13 @@ package com.example.programmingproject.gui.controllers;
 
 import java.io.IOException;
 import java.util.Objects;
+
 import com.example.programmingproject.gui.MainApplication;
 import javafx.event.ActionEvent;
 import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -30,10 +32,17 @@ public class MenuController {
     private Button back;
 
     //changing mode objects
-    private Button btnLight;
-    private boolean isLightMode = true; // changing mode condition
-    private ImageView imageView;
-    private AnchorPane anchorPane;
+    @FXML
+    private Button btnMode;
+    @FXML
+    private boolean isLightMode = true;
+    @FXML
+    private ImageView imgMode;
+    @FXML
+    private AnchorPane root;
+    @FXML
+    private Label label;
+
 
 
     @FXML
@@ -72,27 +81,28 @@ public class MenuController {
     }
 
 
+
+
     //changing modes methods
     public void changeMode(ActionEvent event){
         isLightMode = !isLightMode;
         if(isLightMode){
             setLightMode();
-        }else{
+        } else {
             setDarkMode();
         }
     }
 
     private void setLightMode(){
-       anchorPane.getStylesheets().remove("styles/darkmode.css");
-       anchorPane.getStylesheets().add("styles/lightmode.css");
-       Image image = new Image("img/lightmode.png");
-       imageView.setImage(image);
+        root.getStylesheets().remove("com/example/programmingproject/gui/styles/darkmode.css");
+        root.getStylesheets().add("com/example/programmingproject/gui/styles/lightmode.css");
+        Image image = new Image("com/example/programmingproject/gui/img/lightmode.png");
+        imgMode.setImage(image);
     }
     private void setDarkMode(){
-        anchorPane.getStylesheets().remove("styles/lightmode.css");
-        anchorPane.getStylesheets().add("styles/darkmode.css");
-        Image image = new Image("img/darkmode.png");
-        imageView.setImage(image);
+        root.getStylesheets().remove("com/example/programmingproject/gui/styles/lightmode.css");
+        root.getStylesheets().add("com/example/programmingproject/gui/styles/darkmode.css");
+        Image image = new Image("com/example/programmingproject/gui/img/darkmode.png");
+        imgMode.setImage(image);
     }
-
 }

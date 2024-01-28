@@ -1,12 +1,28 @@
 /*scene styling*/
-.primary-color{
-    -fx-background-color: #FFFFF;
-}
-.secondary-color {
-    -fx-background-color: #E7E7E7;
+.primary-color {
+    -fx-background-color: #ffffff;
 }
 
-/*button styling*/
-.round-border{
+.secondary-color {
+    -fx-background-color: #e7e7e7;
+}
+
+.text-area {
+    -fx-text-fill: #000000;
+}
+
+/*buttons styling*/
+.mode-button {
+    -fx-background-color: none;
     -fx-background-radius: 100;
+    -fx-border-radius: 100;
+}
+
+
+.menu-button {
+    -fx-background-color: #e7e7e7;
+    -fx-text-fill: #000000;
+    -fx-border-radius: 50;
+    -fx-background-radius: 50;
+    -fx-padding: 5 10 5 10;
 }
