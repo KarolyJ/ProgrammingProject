@@ -30,7 +30,7 @@ public class MenuController {
     @FXML
     private Button rules;
     @FXML
-    private Button back;
+    private Button back; //for rules.fxml
 
     //changing mode objects
     @FXML
@@ -74,7 +74,8 @@ public class MenuController {
         stage.setTitle("The Fancy Sudoku!");
     }
 
-    public void switchToMenuBack(MouseEvent event) throws IOException {
+    //for rules.fxml
+    public void switchToMenuBack(ActionEvent event) throws IOException {
         final Stage stage = (Stage)this.back.getScene().getWindow();
         final Parent root = FXMLLoader.load(Objects.requireNonNull(MainApplication.class.getResource("menu.fxml")));
         stage.setScene(new Scene(root));
@@ -103,7 +104,7 @@ public class MenuController {
     private void setDarkMode(){
         root.getStylesheets().remove(new File("C:\\Users\\39338\\ProgrammingProject\\src\\main\\resources\\com\\example\\programmingproject\\gui\\lightmode.css").toURI().toString());
         root.getStylesheets().add(new File("C:\\Users\\39338\\ProgrammingProject\\src\\main\\resources\\com\\example\\programmingproject\\gui\\darkmode.css").toURI().toString());
-        Image image = new Image(new File("C:\\Users\\39338\\ProgrammingProject\\src\\main\\resources\\com\\example\\programmingproject\\gui\\darkmode.png").toURI().toString());
+        Image image = new Image(new File("C:\\Users\\39338\\ProgrammingProject\\src\\main\\resources\\com\\example\\programmingproject\\gui\\darkmode.jpg").toURI().toString());
         imgMode.setImage(image);
     }
 }

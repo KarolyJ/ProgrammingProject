@@ -15,7 +15,6 @@
 /*buttons styling*/
 .mode-button {
     -fx-background-color: none;
-    -fx-background-radius: 100;
     -fx-border-radius: 100;
 }
 
@@ -33,4 +32,7 @@
     -fx-border-radius: 50;
     -fx-background-radius: 50;
     -fx-padding: 5 10 5 10;
+    -fx-border-color: grey;
 }
+
+

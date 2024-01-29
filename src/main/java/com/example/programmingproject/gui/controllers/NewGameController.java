@@ -2,6 +2,7 @@ package com.example.programmingproject.gui.controllers;
 
 import com.example.programmingproject.gui.holders.DifficultyHolder;
 import com.example.programmingproject.gui.MainApplication;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -12,6 +13,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 
 public class NewGameController {
@@ -21,10 +23,10 @@ public class NewGameController {
     public Button mediumGameButton;
     public Button hardGameButton;
 
-    @FXML
-    public void switchToMenu(final MouseEvent event) throws IOException {
+
+    public void switchToMenu(ActionEvent event) throws IOException {
         final Stage stage = (Stage) this.backButton.getScene().getWindow();
-        final Parent root = (Parent) FXMLLoader.load(MainApplication.class.getResource("menu.fxml"));
+        final Parent root = FXMLLoader.load(MainApplication.class.getResource("menu.fxml"));
         stage.setScene(new Scene(root));
         stage.setTitle("The Fancy Sudoku!");
     }

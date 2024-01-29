@@ -6,13 +6,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="750" prefWidth="650" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programmingproject.gui.controllers.SudokuGridController">
+<BorderPane prefHeight="750" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programmingproject.gui.controllers.SudokuGridController">
 
    <top>
-      <ButtonBar fx:id="buttonBar" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <ButtonBar fx:id="buttonBar" prefHeight="40.0" prefWidth="200.0" styleClass="secondary-color" stylesheets="@lightmode.css" BorderPane.alignment="CENTER">
         <buttons>
-            <Button mnemonicParsing="false" onMouseClicked="#addLife" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" text="Add lives" />
-            <Button fx:id="backButton" mnemonicParsing="false" onMouseClicked="#switchToMenu" style="-fx-background-color: #000000; -fx-text-fill: #F0F8FF; -fx-font-weight: bold; -fx-border-radius: 50; -fx-background-radius: 50; -fx-padding: 5 10 5 10;" text="Back" />
+            <Button mnemonicParsing="false" onMouseClicked="#addLife" styleClass="back-button" stylesheets="@lightmode.css" text="Add lives" />
+            <Button fx:id="backButton" mnemonicParsing="false" onMouseClicked="#switchToMenu" styleClass="back-button" stylesheets="@lightmode.css" text="Back" />
         </buttons>
       </ButtonBar>
    </top>

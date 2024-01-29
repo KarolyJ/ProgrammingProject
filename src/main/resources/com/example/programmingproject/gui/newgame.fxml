@@ -22,16 +22,16 @@
          </font></Button>
       <Pane prefHeight="148.0" prefWidth="650.0" styleClass="secondary-color" stylesheets="@lightmode.css">
          <children>
-            <Label layoutX="205.0" layoutY="48.0" text="Select difficulty">
-               <font>
-                  <Font size="36.0" />
-               </font>
-            </Label>
             <Button fx:id="backButton" layoutX="66.0" layoutY="62.0" mnemonicParsing="false" onAction="#switchToMenu" styleClass="back-button" stylesheets="@lightmode.css" text="Back">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
+            <Label layoutX="205.0" layoutY="48.0" text="Select difficulty">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>
