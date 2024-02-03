@@ -75,9 +75,8 @@ public class SudokuGridController {
 
         livesText = new Label("Lives : " + lives);
         livesText.setStyle("-fx-border-color: black;" +
-                "-fx-border-radius: 20; " +
-                "-fx-alignment: center; " +
-                "-fx-font-weight: bold;");
+                "-fx-border-radius: 30; " +
+                "-fx-alignment: center; ");
 
         //we read the balance stored in a txt file
         try {
@@ -87,9 +86,8 @@ public class SudokuGridController {
         }
         balanceLabel = new Label("Balance: " + balance);
         balanceLabel.setStyle("-fx-border-color: black;" +
-                        "-fx-border-radius: 20; " +
-                        "-fx-alignment: center; " +
-                        "-fx-font-weight: bold;");
+                        "-fx-border-radius: 30; " +
+                        "-fx-alignment: center;");
 
 
         buttonBar.getButtons().addAll(livesText, balanceLabel);

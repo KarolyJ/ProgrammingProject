@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="750" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programmingproject.gui.controllers.SudokuGridController">
+<BorderPane prefHeight="750" prefWidth="700.0" styleClass="sudoku-grid" stylesheets="@lightmode.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programmingproject.gui.controllers.SudokuGridController">
 
    <top>
       <ButtonBar fx:id="buttonBar" prefHeight="40.0" prefWidth="200.0" styleClass="secondary-color" stylesheets="@lightmode.css" BorderPane.alignment="CENTER">

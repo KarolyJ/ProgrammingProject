@@ -56,26 +56,8 @@ public class RecordsController {
         stage.setTitle("The Fancy Sudoku!");
     }
 
-    //changing modes methods
-    public void changeMode(ActionEvent event){
-        isLightMode = !isLightMode;
-        if(isLightMode){
-            setLightMode();
-        } else {
-            setDarkMode();
-        }
-    }
 
-    private void setLightMode(){
-        root.getStylesheets().remove(new File("C:\\Users\\39338\\ProgrammingProject\\src\\main\\resources\\com\\example\\programmingproject\\gui\\darkmode.css").toURI().toString());
-        root.getStylesheets().add(new File("C:\\Users\\39338\\ProgrammingProject\\src\\main\\resources\\com\\example\\programmingproject\\gui\\lightmode.css").toURI().toString());
-        Image image = new Image(new File("C:\\Users\\39338\\ProgrammingProject\\src\\main\\resources\\com\\example\\programmingproject\\gui\\lightmode.png").toURI().toString());
-        imgMode.setImage(image);
-    }
-    private void setDarkMode(){
-        root.getStylesheets().remove(new File("C:\\Users\\39338\\ProgrammingProject\\src\\main\\resources\\com\\example\\programmingproject\\gui\\lightmode.css").toURI().toString());
-        root.getStylesheets().add(new File("C:\\Users\\39338\\ProgrammingProject\\src\\main\\resources\\com\\example\\programmingproject\\gui\\darkmode.css").toURI().toString());
-        Image image = new Image(new File("C:\\Users\\39338\\ProgrammingProject\\src\\main\\resources\\com\\example\\programmingproject\\gui\\darkmode.jpg").toURI().toString());
-        imgMode.setImage(image);
-    }
+
+
+
 }

@@ -9,15 +9,15 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="650.0" styleClass="primary-color" stylesheets="@lightmode.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programmingproject.gui.controllers.RecordsController">
    <children>
-      <Label fx:id="easyLabel" layoutX="208.0" layoutY="264.0" prefHeight="58.0" prefWidth="270.0" style="-fx-border-color: grey; -fx-border-radius: 20; -fx-alignment: center; -fx-font-weight: bold;" text="Easy : ">
+      <Label fx:id="easyLabel" layoutX="208.0" layoutY="264.0" prefHeight="58.0" prefWidth="270.0" style="-fx-border-color: grey; -fx-border-radius: 20; -fx-alignment: center;" text="Easy : ">
          <font>
             <Font size="24.0" />
          </font></Label>
-      <Label fx:id="mediumLabel" layoutX="208.0" layoutY="357.0" prefHeight="58.0" prefWidth="270.0" style="-fx-border-color: grey; -fx-border-radius: 20; -fx-alignment: center; -fx-font-weight: bold;" text="Medium : ">
+      <Label fx:id="mediumLabel" layoutX="208.0" layoutY="357.0" prefHeight="58.0" prefWidth="270.0" style="-fx-border-color: grey; -fx-border-radius: 20; -fx-alignment: center;" text="Medium : ">
          <font>
             <Font size="24.0" />
          </font></Label>
-      <Label fx:id="hardLabel" layoutX="208.0" layoutY="453.0" prefHeight="58.0" prefWidth="270.0" style="-fx-border-color: grey; -fx-border-radius: 20; -fx-alignment: center; -fx-font-weight: bold;" text="Hard : ">
+      <Label fx:id="hardLabel" layoutX="208.0" layoutY="453.0" prefHeight="58.0" prefWidth="270.0" style="-fx-border-color: grey; -fx-border-radius: 20; -fx-alignment: center;" text="Hard : ">
          <font>
             <Font size="24.0" />
          </font></Label>

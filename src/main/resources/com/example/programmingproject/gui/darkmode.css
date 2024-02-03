@@ -26,3 +26,17 @@
     -fx-background-radius: 50;
     -fx-padding: 5 10 5 10;
 }
+.back-button{
+    -fx-background-color: #000000 ;
+    -fx-text-fill:#ffffff;
+    -fx-border-radius: 50;
+    -fx-background-radius: 50;
+    -fx-padding: 5 10 5 10;
+    -fx-border-color: white;
+}
+
+.sudoku-grid{
+    -fx-background-color: #000000;
+    -fx-text-fill: #ffffff;
+
+}
